@@ -1,0 +1,33 @@
+name: Update Sitemap
+
+on:
+  push:
+    paths:
+      - 'jobs.json'   # Runs this workflow when jobs.json is modified
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Sitemap Generator
+        run: node generate-sitemap.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "Auto-update sitemap.xml [GitHub Actions]" || echo "No changes to commit"
+          git push
