@@ -29,6 +29,7 @@ header {
     text-align: center;
 }
 
+/* Navigation Menu */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -37,18 +38,22 @@ nav ul {
     gap: 1rem;
 }
 
+nav ul li {
+    display: inline-block;
+}
+
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
+    padding: 0.5rem;
     transition: all 0.1s ease-in-out;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
     background-color: #911530;
-    padding: 0.5rem;
     border-radius: 5px;
+    text-decoration: underline;
 }
 
 /* Mobile Navigation (Hidden by default) */
@@ -65,7 +70,63 @@ nav ul li a:hover {
     margin: 5px 0;
 }
 
+/* Job Notification Section */
+.job-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.job-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.1s, box-shadow 0.2s;
+    text-align: center;
+    padding: 20px;
+}
+
+.job-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.job-deadline {
+    font-size: 14px;
+    color: #555;
+}
+
 /* Responsive Styles */
+
+/* For Medium Screens (Tablets) */
+@media (max-width: 1200px) {
+    .job-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .job-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For Small Screens (Mobile) */
+@media (max-width: 600px) {
+    .job-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Navigation */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
