@@ -12,29 +12,38 @@
         <priority>1.0</priority>
     </url>
 
-<!-- Job Vacancy -->
-<url>
+    <!-- Vacancy -->
+    <url>
         <loc>https://mysarkariresult.in/Jobs/job-vacancies.html</loc>
         <lastmod>2025-02-15T00:00:00+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
-</url>
+    </url>
 
-    <!-- Example: Contact Page -->
-    <!-- <url>
-        <loc>https://mysarkariresult.in/Contact%20Us/contact.html</loc>
-        <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <!-- Contact Page -->
+    <url>
+        <loc>https://mysarkariresult.in/Contact_Us/contact.html</loc>
+        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-    </url> -->
+    </url>
 
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://mysarkariresult.in/Privacy_Policy/privacy-policy.html</loc>
+        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+
+    <!-- Job Post -->
     <url>
         <loc>https://mysarkariresult.in/Jobs/MPESB-Excise-Constable-Online-Form-2025.html</loc>
         <lastmod>2025-02-15T00:00:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
-        
 
 </urlset>
