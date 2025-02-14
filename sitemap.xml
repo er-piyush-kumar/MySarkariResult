@@ -6,11 +6,19 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://mysarkariresult.in/</loc>
+        <loc>https://mysarkariresult.in</loc>
         <lastmod>2025-02-15T00:00:00+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+
+<!-- Job Vacancy -->
+<url>
+        <loc>https://mysarkariresult.in/Jobs/job-vacancies.html</loc>
+        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+</url>
 
     <!-- Example: Contact Page -->
     <!-- <url>
@@ -26,5 +34,7 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
+
+        
 
 </urlset>
