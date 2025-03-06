@@ -13,14 +13,16 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #ab183d;
-    padding: 1rem 2rem;
+    padding: 0.7rem 1.5rem;
     color: white;
     flex-wrap: wrap;
 }
 
-.logo img {
-    max-width: 80px;
-    object-fit: contain;
+.logo img 
+{
+    max-height: 4.5rem;
+    max-width: 100%;
+    object-fit:contain;
 }
 
 .site-name h1 {
