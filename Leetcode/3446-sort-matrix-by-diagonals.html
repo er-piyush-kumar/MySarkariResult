@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Matrix by Diagonals | Leetcode 3446 | MySarkariResult</title>
+    <meta name="description" content="Learn how to sort a square matrix by diagonals. Detailed explanations of brute force and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.">
+    <meta name="keywords" content="Leetcode 3446, Sort Matrix by Diagonals, Brute Force, Optimized Approach, C++ Code, Time Complexity, FAQs, MySarkariResult">
+    <meta name="author" content="MySarkariResult">
+    <meta property="og:title" content="Sort Matrix by Diagonals | Leetcode 3446">
+    <meta property="og:description" content="Learn how to sort a square matrix by diagonals. Detailed explanations of brute force and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.">
+    <meta property="og:image" content="https://mysarkariresult.in/Images/logo.png">
+    <meta property="og:url" content="https://mysarkariresult.in/Leetcode/3446-sort-matrix-by-diagonals.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sort Matrix by Diagonals | Leetcode 3446">
+    <meta name="twitter:description" content="Learn how to sort a square matrix by diagonals. Detailed explanations of brute force and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.">
+    <meta name="twitter:image" content="https://mysarkariresult.in/Images/logo.png">
+
+    <!-- Canonical Tag for SEO -->
+    <link rel="canonical" href="https://mysarkariresult.in/Leetcode/3446-sort-matrix-by-diagonals.html">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MT47LMPG1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9MT47LMPG1');
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Sort Matrix by Diagonals | Leetcode 3446",
+        "description": "Learn how to sort a square matrix by diagonals. Detailed explanations of brute force and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.",
+        "author": {
+            "@type": "Organization",
+            "name": "MySarkariResult"
+        },
+        "image": "https://mysarkariresult.in/Images/logo.png",
+        "datePublished": "2024-01-01",
+        "publisher": {
+            "@type": "Organization",
+            "name": "MySarkariResult",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://mysarkariresult.in/Images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ab183d;
+            padding: 1rem 2rem;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-width: 80px;
+            object-fit: contain;
+        }
+
+        .site-name h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+            transition: all 0.1s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #911530;
+            border-radius: 5px;
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #ab183d;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: black;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        pre {
+            background: #fafafa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            color: #333;
+        }
+
+        .highlight {
+            background: #ffe7e7;
+            padding: 0.5rem;
+            border-left: 4px solid #ab183d;
+            margin: 1rem 0;
+        }
+
+        table,thead,th,td,tr
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-section details {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .faq-section summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #ab183d;
+        }
+
+        /* Footer */
+        .footer-container {
+            text-align: center;
+            padding: 1rem;
+            background-color: #ab183d;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        .footer-container a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .site-name h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            main {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-name h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            body {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="https://mysarkariresult.in/">
+                <img src="https://mysarkariresult.in/Images/logo.png" alt="Sarkari Result Logo">
+            </a>
+        </div>
+        <div class="site-name">
+            <h1>Sarkari Result</h1>
+            <marquee>MySarkariResult.in</marquee>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://mysarkariresult.in/">Home</a></li>
+                <li><a href="https://mysarkariresult.in/Leetcode/leetcode.html">Leetcode</a></li>
+                <li><a href="https://mysarkariresult.in/Jobs/job-vacancies.html">Job Vacancies</a></li>
+                <li><a href="https://mysarkariresult.in/Contact_Us/contact.html">Contact Us</a></li>
+                <li><a href="https://mysarkariresult.in/Admit_Card/admit-card.html">Admit Card</a></li>
+                <li><a href="https://mysarkariresult.in/Results/results.html">Results</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Leetcode 3446 | Sort Matrix by Diagonals</h1>
+        <p>
+            Sorting a square matrix based on its diagonals is an interesting problem that tests our understanding of array manipulation and sorting techniques. In this article, we’ll explore three approaches to solve this problem: a <strong>Brute Force</strong> method, an <strong>Optimized Approach</strong> using a hash map, and an <strong>In-Place Sorting</strong> approach. We’ll also analyze the time complexity of each solution and answer some frequently asked questions.
+        </p>
+
+        <h3><u>Problem Link</u> : <a href="https://leetcode.com/problems/sort-matrix-by-diagonals/description/">Sort Matrix by Diagonals</a></h3>
+
+        <h2>Understanding the Problem</h2>
+        <p>
+            We are given an <code>n × n</code> square matrix, and we need to sort its diagonals according to the following rules:
+        </p>
+        <ul>
+            <li>Diagonals in the <strong>bottom-left triangle</strong> (including the middle diagonal) should be sorted in <strong>non-increasing order</strong> (descending).</li>
+            <li>Diagonals in the <strong>top-right triangle</strong> should be sorted in <strong>non-decreasing order</strong> (ascending).</li>
+        </ul>
+
+        <h3>Example 1</h3>
+<pre><code>
+<b>Input:</b>
+grid = [[1, 7, 3],
+        [9, 8, 2],
+        [4, 5, 6]]
+
+<b>Output:</b>
+grid = [[8, 2, 3],
+        [9, 6, 7],
+        [4, 5, 1]]
+        </code></pre>
+
+        <h3>Example 2</h3>
+        <pre><code>
+<b>Input:</b>
+grid = [[0, 1],
+        [1, 2]]
+
+<b>Output:</b>
+grid = [[2, 1],
+        [1, 0]]
+        </code></pre>
+
+        <hr>
+        <h2>Brute Force Approach – Sorting Each Diagonal Individually</h2>
+        <p>
+            The brute force approach involves extracting all diagonals from the matrix, sorting them, and then placing them back into the matrix.
+        </p>
+
+        <u><h3>Step-by-Step Approach</h3></u>
+        <ol>
+            <li><strong>Extract Diagonals</strong>: Iterate through the matrix and collect elements for each diagonal.</li>
+            <li><strong>Sort Diagonals</strong>:
+                <ul>
+                    <li>Sort diagonals in the bottom-left triangle in <strong>descending order</strong>.</li>
+                    <li>Sort diagonals in the top-right triangle in <strong>ascending order</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Place Diagonals Back</strong>: Reconstruct the matrix with the sorted diagonals.</li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>Extracting diagonals: <code>O(n²)</code></li>
+            <li>Sorting each diagonal: <code>O(n log n)</code></li>
+            <li>Placing them back: <code>O(n²)</code></li>
+            <li><strong>Total Complexity</strong>: <code>O(n² log n)</code></li>
+        </ul>
+
+        <h4>C++ Implementation</h4>
+        <pre><code>
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; sortMatrix(vector&lt;vector&lt;int&gt;&gt; &grid) {
+        int n = grid.size();
+
+        // Sort all diagonals separately
+        for (int d = -(n - 1); d &lt;= (n - 1); d++) {
+            vector&lt;int&gt; diag;
+
+            // Collect diagonal elements
+            for (int i = 0; i &lt; n; i++) {
+                for (int j = 0; j &lt; n; j++) {
+                    if (i - j == d) {
+                        diag.push_back(grid[i][j]);
+                    }
+                }
+            }
+
+            // Sort the diagonal accordingly
+            if (d &gt;= 0)
+                sort(diag.begin(), diag.end(), greater&lt;int&gt;()); // Descending order
+            else
+                sort(diag.begin(), diag.end()); // Ascending order
+
+            // Put sorted elements back
+            int index = 0;
+            for (int i = 0; i &lt; n; i++) {
+                for (int j = 0; j &lt; n; j++) {
+                    if (i - j == d) {
+                        grid[i][j] = diag[index++];
+                    }
+                }
+            }
+        }
+        return grid;
+    }
+};
+
+int main() {
+    Solution sol;
+    vector&lt;vector&lt;int&gt;&gt; grid = {{1, 7, 3}, {9, 8, 2}, {4, 5, 6}};
+
+    vector&lt;vector&lt;int&gt;&gt; sortedGrid = sol.sortMatrix(grid);
+
+    for (auto row : sortedGrid) {
+        for (int num : row) {
+            cout &lt;&lt; num &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+
+        <u><h3>Drawbacks of the Brute Force Approach</h3></u>
+        <ul>
+            <li>Iterating over all elements multiple times increases redundancy.</li>
+            <li>Sorting each diagonal separately is inefficient.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Optimized Approach – Using Hash Map for Efficient Sorting</h2>
+        <p>
+            The optimized approach uses a hash map to store and sort diagonals efficiently.
+        </p>
+
+        <u><h3>Steps to Optimize</h3></u>
+        <ol>
+            <li><strong>Store Diagonals in a Hash Map</strong>:
+                <ul>
+                    <li>Key: <code>(i - j)</code> (unique identifier for each diagonal).</li>
+                    <li>Value: List of elements in that diagonal.</li>
+                </ul>
+            </li>
+            <li><strong>Sort Diagonals</strong>:
+                <ul>
+                    <li>Sort diagonals in the bottom-left triangle in <strong>descending order</strong>.</li>
+                    <li>Sort diagonals in the top-right triangle in <strong>ascending order</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Reconstruct the Matrix</strong>: Place the sorted diagonals back into the matrix.</li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>Collecting diagonals: <code>O(n²)</code></li>
+            <li>Sorting diagonals: <code>O(n log n)</code></li>
+            <li>Reconstructing matrix: <code>O(n²)</code></li>
+            <li><strong>Total Complexity</strong>: <code>O(n² log n)</code>, but with reduced redundancy.</li>
+        </ul>
+
+        <h4>C++ Implementation</h4>
+        <pre><code>
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;unordered_map&gt;
+
+using namespace std;
+
+class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; sortMatrix(vector&lt;vector&lt;int&gt;&gt; &grid) {
+        int n = grid.size();
+        unordered_map&lt;int, vector&lt;int&gt;&gt; diagMap;
+
+        // Collect all diagonals
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; n; j++) {
+                diagMap[i - j].push_back(grid[i][j]);
+            }
+        }
+
+        // Sort diagonals based on their positions
+        for (auto &[key, values] : diagMap) {
+            if (key &gt;= 0) {
+                sort(values.begin(), values.end(), greater&lt;int&gt;()); // Descending for bottom-left
+            } else {
+                sort(values.begin(), values.end()); // Ascending for top-right
+            }
+        }
+
+        // Fill sorted values back into the matrix
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; n; j++) {
+                grid[i][j] = diagMap[i - j].back();
+                diagMap[i - j].pop_back();
+            }
+        }
+
+        return grid;
+    }
+};
+        </code></pre>
+        <hr>
+        <h2>Approach 3: In-Place Diagonal Sorting</h2>
+        <p>
+            This approach sorts each diagonal directly within the matrix without using extra space. It identifies the starting points of diagonals and sorts them in-place.
+        </p>
+
+        <u><h3>Steps to Implement</h3></u>
+        <ol>
+            <li><strong>Identify Diagonals</strong>:
+                <ul>
+                    <li>For the <strong>bottom-left triangle</strong>, diagonals start from the first column (<code>grid[i][0]</code>).</li>
+                    <li>For the <strong>top-right triangle</strong>, diagonals start from the first row (<code>grid[0][j]</code>).</li>
+                </ul>
+            </li>
+            <li><strong>Sort Each Diagonal</strong>:
+                <ul>
+                    <li>Extract elements along the diagonal, sort them, and place them back into the matrix.</li>
+                </ul>
+            </li>
+            <li><strong>Handle Sorting Order</strong>:
+                <ul>
+                    <li>Sort diagonals in the bottom-left triangle in <strong>descending order</strong>.</li>
+                    <li>Sort diagonals in the top-right triangle in <strong>ascending order</strong>.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>Extracting and sorting each diagonal: <code>O(n log n)</code> per diagonal.</li>
+            <li><strong>Total Complexity</strong>: <code>O(n² log n)</code>.</li>
+        </ul>
+
+        <u><h3>Space Complexity</h3></u>
+        <ul>
+            <li><code>O(1)</code> (no extra space is used apart from a few variables).</li>
+        </ul>
+
+        <h4>C++ Implementation</h4>
+        <pre><code>
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; sortMatrix(vector&lt;vector&lt;int&gt;&gt;& grid) {
+        int n = grid.size();
+
+        // Sort diagonals in the bottom-left triangle (including main diagonal)
+        for (int i = 0; i &lt; n; i++) {
+            vector&lt;int&gt; diag;
+            int row = i, col = 0;
+
+            // Extract the diagonal
+            while (row &lt; n && col &lt; n) {
+                diag.push_back(grid[row][col]);
+                row++;
+                col++;
+            }
+
+            // Sort the diagonal in descending order
+            sort(diag.begin(), diag.end(), greater&lt;int&gt;());
+
+            // Place the sorted diagonal back into the matrix
+            row = i, col = 0;
+            int index = 0;
+            while (row &lt; n && col &lt; n) {
+                grid[row][col] = diag[index++];
+                row++;
+                col++;
+            }
+        }
+
+        // Sort diagonals in the top-right triangle
+        for (int j = 1; j &lt; n; j++) {
+            vector&lt;int&gt; diag;
+            int row = 0, col = j;
+
+            // Extract the diagonal
+            while (row &lt; n && col &lt; n) {
+                diag.push_back(grid[row][col]);
+                row++;
+                col++;
+            }
+
+            // Sort the diagonal in ascending order
+            sort(diag.begin(), diag.end());
+
+            // Place the sorted diagonal back into the matrix
+            row = 0, col = j;
+            int index = 0;
+            while (row &lt; n && col &lt; n) {
+                grid[row][col] = diag[index++];
+                row++;
+                col++;
+            }
+        }
+
+        return grid;
+    }
+};
+
+int main() {
+    Solution sol;
+    vector&lt;vector&lt;int&gt;&gt; grid = {{1, 7, 3}, {9, 8, 2}, {4, 5, 6}};
+
+    vector&lt;vector&lt;int&gt;&gt; sortedGrid = sol.sortMatrix(grid);
+
+    for (auto row : sortedGrid) {
+        for (int num : row) {
+            cout &lt;&lt; num &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+        <hr>
+        <h2>Comparison of All Approaches</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Approach</th>
+                    <th>Time Complexity</th>
+                    <th>Space Complexity</th>
+                    <th>Key Idea</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brute Force</td>
+                    <td>O(n² log n)</td>
+                    <td>O(n²)</td>
+                    <td>Extract diagonals, sort them, and place them back.</td>
+                </tr>
+                <tr>
+                    <td>Optimized (Hash Map)</td>
+                    <td>O(n² log n)</td>
+                    <td>O(n²)</td>
+                    <td>Use a hash map to store and sort diagonals efficiently.</td>
+                </tr>
+                <tr>
+                    <td>In-Place Sorting</td>
+                    <td>O(n² log n)</td>
+                    <td>O(1)</td>
+                    <td>Sort diagonals directly within the matrix without extra space.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <div class="faq-section">
+            <details>
+                <summary>1. Can we solve this problem in O(n²) time?</summary>
+                <p>Not exactly, since sorting takes O(n log n). However, using bucket sort (if constraints allow) could make sorting nearly O(n).</p>
+            </details>
+            <details>
+                <summary>2. Why did we use an unordered_map?</summary>
+                <p>It helps in efficiently storing and retrieving diagonal elements using (i - j) as a unique key.</p>
+            </details>
+            <details>
+                <summary>3. What is the difference between the brute force and optimized approaches?</summary>
+                <p>The brute force approach sorts each diagonal individually, while the optimized approach uses a hash map to store and sort diagonals more efficiently.</p>
+            </details>
+            <details>
+                <summary>4. How do we identify diagonals in the matrix?</summary>
+                <p>Each diagonal can be uniquely identified by the value <code>(i - j)</code>, where <code>i</code> is the row index and <code>j</code> is the column index.</p>
+            </details>
+            <details>
+                <summary>5. Can this problem be solved for non-square matrices?</summary>
+                <p>No, the problem specifically requires a square matrix (n × n).</p>
+            </details>
+            <details>
+                <summary>6. What is the space complexity of the optimized approach?</summary>
+                <p>The space complexity is O(n²) due to the hash map storing all diagonal elements.</p>
+            </details>
+            <details>
+                <summary>7. Is there a way to further optimize this solution?</summary>
+                <p>Using bucket sort (if applicable) could reduce the sorting time to O(n), but the overall complexity would still be O(n²).</p>
+            </details>
+            <details>
+                <summary>8. Why do we sort diagonals in different orders?</summary>
+                <p>Diagonals in the bottom-left triangle are sorted in descending order, while those in the top-right triangle are sorted in ascending order, as per the problem requirements.</p>
+            </details>
+            <details>
+                <summary>9. Can this problem be solved using recursion?</summary>
+                <p>Yes, but it would be less efficient due to the overhead of recursive calls.</p>
+            </details>
+            <details>
+                <summary>10. What are the real-world applications of this problem?</summary>
+                <p>This problem helps in understanding matrix manipulation and sorting techniques, which are useful in image processing, data analysis, and machine learning.</p>
+            </details>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer-container">
+        <p>
+            &copy; 2025 
+            <a href="https://mysarkariresult.in/" target="_blank" class="footer-link">
+                MySarkariResult
+            </a>
+            All Rights Reserved |  
+            <a href="https://mysarkariresult.in/Privacy_Policy/privacy-policy.html"> Privacy Policy </a>
+            | 
+            <a href="https://mysarkariresult.in/sitemap.xml"> Sitemap </a>
+        </p>
+    </div>
+</body>
+</html>
