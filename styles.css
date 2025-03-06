@@ -21,6 +21,7 @@ header {
 .logo img {
     max-width: 80px;
     object-fit: contain;
+    scale: 1.6;
 }
 
 .site-name h1 {

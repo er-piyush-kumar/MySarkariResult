@@ -16,6 +16,8 @@ header {
     padding: 0.7rem 1.5rem;
     color: white;
     flex-wrap: wrap;
+    position: sticky;
+    z-index: 1000;
 }
 
 .logo img 

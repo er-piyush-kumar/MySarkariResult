@@ -1,11 +1,13 @@
 [
     {
-        "title": "Leetcode 2965 : Find Missing and Repeated Values",
+        "title": "Find Missing and Repeated Values",
+        "Leetcode": "2965",
         "difficulty": "Easy",
         "link": "https://mysarkariresult.in/Leetcode/2965-find-missing-and-repeated-values.html"
     },
     {
         "title": "Sort Matrix by Diagonals",
+        "Leetcode": "3446",
         "difficulty": "Medium",
         "link": "https://mysarkariresult.in/Leetcode/3446-sort-matrix-by-diagonals.html"
     }

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leetcode Problems | MySarkariResult.in</title>
+    <link rel="stylesheet" href="https://mysarkariresult.in/styles.css">
+    
+    <meta name="description" content="Explore Leetcode problems with detailed explanations, approaches, and solutions on MySarkariResult.in. Learn how to solve coding challenges efficiently.">
+    <meta name="keywords" content="Leetcode, Coding Problems, Algorithm Solutions, Data Structures, MySarkariResult.in, Programming Challenges">
+    <meta name="rating" content="general">
+    <meta http-equiv="content-language" content="en">
+    <meta name="distribution" content="global">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://mysarkariresult.in/Leetcode/leetcode.html">
+
+    <!-- Social / SEO -->
+    <meta property="og:title" content="Leetcode Problems - MySarkariResult.in">
+    <meta property="og:description" content="Explore Leetcode problems with detailed explanations, approaches, and solutions on MySarkariResult.in.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://mysarkariresult.in/Images/logo.png">
+    <meta property="og:url" content="https://mysarkariresult.in/Leetcode/leetcode.html">
+
+    <!-- Inline CSS for Sticky Header and Footer -->
+    <style>
+
+    .logo img {
+        max-width: 80px;
+        object-fit: contain;
+        scale: 1.6;
+    }
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial';
+            background-color: #f8f8f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+        }
+
+        /* Leetcode Container */
+        .leetcode-container 
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        /* Leetcode Problem Card */
+        .leetcode-card 
+        {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.1s, box-shadow 0.2s;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .leetcode-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Problem Title */
+        .problem-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Leetcode Number and Difficulty */
+        .leetcode-info {
+            display: flex;
+            justify-content: center;
+            gap: 10%; /* Space between Leetcode number and difficulty */
+            margin-top: 5%;
+            margin-bottom: 1rem;
+        }
+
+        .leetcode-number {
+            font-size: 1rem;
+            color: #555;
+            align-content: center;
+        }
+
+        .difficulty-box {
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 15px; /* Rounded box */
+            color: white;
+            align-content: center;
+        }
+
+        .difficulty-box.easy {
+            background-color: green;
+        }
+
+        .difficulty-box.medium {
+            background-color: orange;
+        }
+
+        .difficulty-box.hard {
+            background-color: red;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .leetcode-container {
+                grid-template-columns: repeat(2, 1fr); /* 2-column grid for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .leetcode-container {
+                grid-template-columns: 1fr; /* 1-column grid for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Fetched via script.js) -->
+    <div id="header-container"></div>
+
+    <!-- Container for Leetcode Problems -->
+    <div class="leetcode-container"></div>
+
+    <!-- Footer Section -->
+    <div id="footer-container"></div>
+
+    <!-- Script to Load Header, Footer, and Leetcode Problems -->
+    <script>
+        // 1. Fetch the Header and Initialize the Mobile Menu
+        fetch("https://mysarkariresult.in/Header/header.html") // Updated to root address
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+
+                // Initialize mobile menu toggle
+                const mobileMenu = document.getElementById('mobile-menu');
+                const nav = document.querySelector('nav');
+
+                if (mobileMenu && nav) {
+                    mobileMenu.addEventListener('click', () => {
+                        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                    });
+                }
+            })
+            .catch(error => console.error("Error loading header:", error));
+
+        // 2. Fetch the Footer
+        fetch("https://mysarkariresult.in/Footer/footer.html") // Updated to root address
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading footer:", error));
+
+        // 3. Fetch Leetcode Problems from leetcode.json
+        fetch("./leetcode.json") // Updated to root address
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(problems => {
+                if (!Array.isArray(problems)) {
+                    throw new Error('Invalid problem data format');
+                }
+
+                const container = document.querySelector('.leetcode-container');
+                container.innerHTML = ''; // Clear any existing content
+
+                problems.forEach(problem => {
+                    // Ensure problem object has required properties
+                    if (!problem.title || !problem.Leetcode || !problem.difficulty || !problem.link) {
+                        console.warn('Skipping problem with missing details:', problem);
+                        return;
+                    }
+
+                    const problemCard = document.createElement('div');
+                    problemCard.className = 'leetcode-card';
+
+                    problemCard.innerHTML = `
+                        <div class="problem-title">${problem.title}</div>
+                        <div class="leetcode-info">
+                            <div class="leetcode-number">Leetcode: ${problem.Leetcode}</div>
+                            <div class="difficulty-box ${problem.difficulty.toLowerCase()}">${problem.difficulty}</div>
+                        </div>
+                    `;
+
+                    // Open problem link in a new tab when clicked
+                    problemCard.addEventListener('click', () => {
+                        window.open(problem.link, '_blank');
+                    });
+
+                    container.appendChild(problemCard);
+                });
+            })
+            .catch(error => console.error('Error fetching Leetcode problems:', error));
+    </script>
+</body>
+</html>
