@@ -7,7 +7,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://mysarkariresult.in</loc>
-        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+        <lastmod>2024-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Vacancy -->
     <url>
         <loc>https://mysarkariresult.in/Jobs/job-vacancies.html</loc>
-        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+        <lastmod>2024-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -23,7 +23,7 @@
     <!-- Contact Page -->
     <url>
         <loc>https://mysarkariresult.in/Contact_Us/contact.html</loc>
-        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+        <lastmod>2024-03-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -31,7 +31,7 @@
     <!-- Privacy Policy -->
     <url>
         <loc>https://mysarkariresult.in/Privacy_Policy/privacy-policy.html</loc>
-        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+        <lastmod>2024-03-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -40,7 +40,15 @@
     <!-- Job Post -->
     <url>
         <loc>https://mysarkariresult.in/Jobs/MPESB-Excise-Constable-Online-Form-2025.html</loc>
-        <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+        <lastmod>2024-03-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Leetcode Post -->
+    <url>
+        <loc>https://mysarkariresult.in/Leetcode/2965-find-missing-and-repeated-values.html</loc>
+        <lastmod>2024-03-06</lastmod> <!-- Update this date to today's date -->
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
