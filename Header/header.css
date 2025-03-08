@@ -101,75 +101,86 @@ nav ul li a:hover {
 }
 
 /* For Small Screens (Mobile) */
+/* Mobile Navigation - Left Side View */
 @media (max-width: 768px) {
-    header {
-        padding: 0.5rem 1rem;
-    }
-
-    .logo img {
-        max-height: 3.5rem;
-    }
-
-    .site-name h1 {
-        font-size: 1.5rem;
-    }
-
-    .site-name marquee {
-        font-size: 0.8rem;
-    }
-
     nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ab183d;
-        padding: 0.5rem 0;
+      display: none; /* Hide nav by default on mobile */
+      position: fixed; /* Fixed position for sidebar */
+      top: 0;
+      left: -100%; /* Start off-screen */
+      width: 70%; /* Width of the sidebar */
+      height: 100vh; /* Full height of the viewport */
+      background-color: #ab183d;
+      padding: 1rem;
+      z-index: 999; /* Ensure it appears above other content */
+      transition: left 0.3s ease-in-out; /* Smooth slide-in animation */
     }
-
+  
+    /* Show nav when 'active-nav' class is added */
+    nav.active-nav {
+      left: 0; /* Slide in from the left */
+    }
+  
     nav ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.5rem;
+      flex-direction: column;
+      align-items: flex-start; /* Align links to the left */
+      width: 100%;
     }
-
+  
+    nav ul li {
+      width: 100%;
+      text-align: left; /* Align text to the left */
+      padding: 0.5rem 0;
+    }
+  
     nav ul li a {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.5rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
     }
-
+  
     .menu-toggle {
-        display: flex;
+      display: flex;
     }
+  }
 
-    .active-nav {
-        display: flex;
+/* Mobile Navigation - Left Side View */
+@media (max-width: 768px) {
+    nav {
+      display: none; /* Hide nav by default on mobile */
+      position: fixed; /* Fixed position for sidebar */
+      top: 0;
+      left: -100%; /* Start off-screen */
+      width: 70%; /* Width of the sidebar */
+      height: 100vh; /* Full height of the viewport */
+      background-color: #ab183d;
+      padding: 1rem;
+      z-index: 999; /* Ensure it appears above other content */
+      transition: left 0.3s ease-in-out; /* Smooth slide-in animation */
     }
-}
-
-@media (max-width: 480px) {
-    .logo img {
-        max-height: 3rem;
+  
+    /* Show nav when 'active-nav' class is added */
+    nav.active-nav {
+      left: 0; /* Slide in from the left */
     }
-
-    .site-name h1 {
-        font-size: 1.2rem;
+  
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start; /* Align links to the left */
+      width: 100%;
     }
-
-    .site-name marquee {
-        font-size: 0.7rem;
+  
+    nav ul li {
+      width: 100%;
+      text-align: left; /* Align text to the left */
+      padding: 0.5rem 0;
     }
-
+  
     nav ul li a {
-        font-size: 0.8rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
     }
-
+  
     .menu-toggle {
-        padding: 0.3rem;
-    }
-
-    .bar {
-        width: 25px;
+      display: flex;
     }
 }
