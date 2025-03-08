@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Recolors to Get K Consecutive Black Blocks | Leetcode 2379 | MySarkariResult</title>
+    <meta name="description" content="Learn how to solve the Minimum Recolors to Get K Consecutive Black Blocks problem on LeetCode. Detailed explanations of brute force, sliding window, and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.">
+    <meta name="keywords" content="Leetcode 2379, Minimum Recolors, Sliding Window, Brute Force, Optimized Approach, C++ Code, Time Complexity, FAQs, MySarkariResult">
+    <meta name="author" content="MySarkariResult">
+    <meta property="og:title" content="Minimum Recolors to Get K Consecutive Black Blocks | Leetcode 2379">
+    <meta property="og:description" content="Learn how to solve the Minimum Recolors to Get K Consecutive Black Blocks problem on LeetCode. Detailed explanations of brute force, sliding window, and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.">
+    <meta property="og:image" content="https://mysarkariresult.in/Images/logo.png">
+    <meta property="og:url" content="https://mysarkariresult.in/Leetcode/2379-minimum-recolors-to-get-k-consecutive-black-blocks.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Minimum Recolors to Get K Consecutive Black Blocks | Leetcode 2379">
+    <meta name="twitter:description" content="Learn how to solve the Minimum Recolors to Get K Consecutive Black Blocks problem on LeetCode. Detailed explanations of brute force, sliding window, and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.">
+    <meta name="twitter:image" content="https://mysarkariresult.in/Images/logo.png">
+
+    <!-- Canonical Tag for SEO -->
+    <link rel="canonical" href="https://mysarkariresult.in/Leetcode/2379-minimum-recolors-to-get-k-consecutive-black-blocks.html">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MT47LMPG1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9MT47LMPG1');
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Minimum Recolors to Get K Consecutive Black Blocks | Leetcode 2379",
+        "description": "Learn how to solve the Minimum Recolors to Get K Consecutive Black Blocks problem on LeetCode. Detailed explanations of brute force, sliding window, and optimized approaches, with C++ code examples, time complexity analysis, and FAQs.",
+        "author": {
+            "@type": "Organization",
+            "name": "MySarkariResult"
+        },
+        "image": "https://mysarkariresult.in/Images/logo.png",
+        "datePublished": "2024-01-01",
+        "publisher": {
+            "@type": "Organization",
+            "name": "MySarkariResult",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://mysarkariresult.in/Images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ab183d;
+            padding: 0.7rem 1.5rem;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-width: 80px;
+            scale: 1.6;
+            object-fit: contain;
+        }
+
+        .site-name h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+            transition: all 0.1s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #911530;
+            border-radius: 5px;
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #ab183d;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: black;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        pre {
+            background: #fafafa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            color: #333;
+        }
+
+        .highlight {
+            background: #ffe7e7;
+            padding: 0.5rem;
+            border-left: 4px solid #ab183d;
+            margin: 1rem 0;
+        }
+
+        table,thead,th,td,tr
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-section details {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .faq-section summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #ab183d;
+        }
+
+        /* Footer */
+        .footer-container {
+            text-align: center;
+            padding: 1rem;
+            background-color: #ab183d;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        .footer-container a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .site-name h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            main {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-name h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            body {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="https://mysarkariresult.in/">
+                <img src="https://mysarkariresult.in/Images/logo.png" alt="Sarkari Result Logo">
+            </a>
+        </div>
+        <div class="site-name">
+            <h1>Sarkari Result</h1>
+            <marquee>MySarkariResult.in</marquee>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://mysarkariresult.in/">Home</a></li>
+                <li><a href="https://mysarkariresult.in/Leetcode/leetcode.html">Leetcode</a></li>
+                <li><a href="https://mysarkariresult.in/Jobs/job-vacancies.html">Job Vacancies</a></li>
+                <li><a href="https://mysarkariresult.in/Contact_Us/contact.html">Contact Us</a></li>
+                <li><a href="https://mysarkariresult.in/Admit_Card/admit-card.html">Admit Card</a></li>
+                <li><a href="https://mysarkariresult.in/Results/results.html">Results</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Leetcode 2379 | Minimum Recolors to Get K Consecutive Black Blocks</h1>
+        <p>
+            The problem "Minimum Recolors to Get K Consecutive Black Blocks" is a classic example of a sliding window problem. It requires us to find the minimum number of recoloring operations needed to achieve at least <code>k</code> consecutive black blocks in a given string of blocks. In this article, we’ll explore multiple approaches to solve this problem, including a <strong>Brute Force</strong> method, an <strong>Optimized Sliding Window</strong> approach, and an <strong>In-Place Counting</strong> approach. We’ll also analyze the time and space complexity of each solution and answer some frequently asked questions.
+        </p>
+
+        <h3><u>Problem Link</u> : <a href="https://leetcode.com/problems/minimum-recolors-to-get-k-consecutive-black-blocks/description/">Minimum Recolors to Get K Consecutive Black Blocks</a></h3>
+
+        <h2>Understanding the Problem</h2>
+        <p>
+            We are given a string <code>blocks</code> of length <code>n</code>, where each character is either <code>'W'</code> (white) or <code>'B'</code> (black). We are also given an integer <code>k</code>, which represents the desired number of consecutive black blocks. In one operation, we can recolor a white block to black. The goal is to find the minimum number of operations required to achieve at least one occurrence of <code>k</code> consecutive black blocks.
+        </p>
+
+        <h3>Example 1</h3>
+<pre><code>
+<b>Input:</b>
+blocks = "WBBWWBBWBW", k = 7
+
+<b>Output:</b>
+3
+
+<b>Explanation:</b>
+One way to achieve 7 consecutive black blocks is to recolor the 0th, 3rd, and 4th blocks
+so that blocks = "BBBBBBBWBW". 
+It can be shown that there is no way to achieve 7 consecutive black blocks in less than 3 operations.
+Therefore, we return 3.
+</code></pre>
+
+        <h3>Example 2</h3>
+<pre><code>
+<b>Input:</b>
+blocks = "WBWBBBW", k = 2
+
+<b>Output:</b>
+0
+
+<b>Explanation:</b>
+No changes need to be made, since 2 consecutive black blocks already exist.
+Therefore, we return 0.
+</code></pre>
+
+        <hr>
+        <h2>Brute Force Approach – Checking All Possible Substrings</h2>
+        <p>
+            The brute force approach involves checking all possible substrings of length <code>k</code> in the given string and calculating the number of white blocks in each substring. The minimum number of white blocks across all substrings is the answer.
+        </p>
+
+        <u><h3>Step-by-Step Approach</h3></u>
+        <ol>
+            <li><strong>Iterate Through the String</strong>: For each starting index <code>i</code> in the string, consider the substring of length <code>k</code> starting at <code>i</code>.</li>
+            <li><strong>Count White Blocks</strong>: Count the number of white blocks (<code>'W'</code>) in the current substring.</li>
+            <li><strong>Track Minimum Operations</strong>: Keep track of the minimum number of white blocks across all substrings.</li>
+            <li><strong>Return the Result</strong>: The minimum count of white blocks is the answer.</li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>Iterating through the string: <code>O(n)</code></li>
+            <li>Counting white blocks in each substring: <code>O(k)</code></li>
+            <li><strong>Total Complexity</strong>: <code>O(n * k)</code></li>
+        </ul>
+
+        <u><h3>Space Complexity</h3></u>
+        <ul>
+            <li><code>O(1)</code> (no extra space is used apart from a few variables).</li>
+        </ul>
+
+        <h4>C++ Implementation</h4>
+        <pre><code>
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+class Solution {
+public:
+    int minimumRecolors(string blocks, int k) {
+        int n = blocks.size();
+        int minOps = INT_MAX;
+
+        for (int i = 0; i <= n - k; i++) {
+            int countW = 0;
+            for (int j = i; j < i + k; j++) {
+                if (blocks[j] == 'W') {
+                    countW++;
+                }
+            }
+            minOps = min(minOps, countW);
+        }
+
+        return minOps;
+    }
+};
+        </code></pre>
+
+        <u><h3>Drawbacks of the Brute Force Approach</h3></u>
+        <ul>
+            <li>It is inefficient for large inputs due to the nested loop structure.</li>
+            <li>It does not take advantage of overlapping substrings.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Optimized Approach – Sliding Window</h2>
+        <p>
+            The sliding window approach optimizes the brute force method by reusing the count of white blocks from the previous window. This reduces the time complexity significantly.
+        </p>
+
+        <u><h3>Steps to Optimize</h3></u>
+        <ol>
+            <li><strong>Initialize the Window</strong>: Count the number of white blocks in the first window of size <code>k</code>.</li>
+            <li><strong>Slide the Window</strong>: Move the window one step at a time and update the count of white blocks by considering the new element added and the element removed from the window.</li>
+            <li><strong>Track Minimum Operations</strong>: Keep track of the minimum number of white blocks across all windows.</li>
+            <li><strong>Return the Result</strong>: The minimum count of white blocks is the answer.</li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>Initializing the first window: <code>O(k)</code></li>
+            <li>Sliding the window: <code>O(n - k)</code></li>
+            <li><strong>Total Complexity</strong>: <code>O(n)</code></li>
+        </ul>
+
+        <u><h3>Space Complexity</h3></u>
+        <ul>
+            <li><code>O(1)</code> (no extra space is used apart from a few variables).</li>
+        </ul>
+
+        <h4>C++ Implementation</h4>
+        <pre><code>
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+class Solution {
+public:
+    int minimumRecolors(string blocks, int k) {
+        int n = blocks.size();
+        int countW = 0;
+        int minOps = INT_MAX;
+
+        // Initialize the first window
+        for (int i = 0; i < k; i++) {
+            if (blocks[i] == 'W') {
+                countW++;
+            }
+        }
+        minOps = countW;
+
+        // Slide the window
+        for (int i = k; i < n; i++) {
+            if (blocks[i - k] == 'W') {
+                countW--;
+            }
+            if (blocks[i] == 'W') {
+                countW++;
+            }
+            minOps = min(minOps, countW);
+        }
+
+        return minOps;
+    }
+};
+        </code></pre>
+
+        <hr>
+
+        <h2>Approach 3: In-Place Counting</h2>
+        <p>
+            This approach is similar to the sliding window method but avoids using extra variables to store the count of white blocks. Instead, it directly updates the minimum operations while iterating through the string.
+        </p>
+
+        <u><h3>Steps to Implement</h3></u>
+        <ol>
+            <li><strong>Initialize Counters</strong>: Use two pointers to represent the start and end of the window.</li>
+            <li><strong>Iterate Through the String</strong>: Move the end pointer and update the count of white blocks in the current window.</li>
+            <li><strong>Update Minimum Operations</strong>: If the window size reaches <code>k</code>, update the minimum operations and move the start pointer.</li>
+            <li><strong>Return the Result</strong>: The minimum count of white blocks is the answer.</li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>Iterating through the string: <code>O(n)</code></li>
+            <li><strong>Total Complexity</strong>: <code>O(n)</code></li>
+        </ul>
+
+        <u><h3>Space Complexity</h3></u>
+        <ul>
+            <li><code>O(1)</code> (no extra space is used apart from a few variables).</li>
+        </ul>
+
+        <h4>C++ Implementation</h4>
+        <pre><code>
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+class Solution {
+public:
+    int minimumRecolors(string blocks, int k) {
+        int n = blocks.size();
+        int countW = 0;
+        int minOps = INT_MAX;
+        int start = 0;
+
+        for (int end = 0; end < n; end++) {
+            if (blocks[end] == 'W') {
+                countW++;
+            }
+
+            if (end - start + 1 == k) {
+                minOps = min(minOps, countW);
+                if (blocks[start] == 'W') {
+                    countW--;
+                }
+                start++;
+            }
+        }
+
+        return minOps;
+    }
+};
+        </code></pre>
+
+        <hr>
+
+        <h2>Comparison of All Approaches</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Approach</th>
+                    <th>Time Complexity</th>
+                    <th>Space Complexity</th>
+                    <th>Key Idea</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brute Force</td>
+                    <td>O(n * k)</td>
+                    <td>O(1)</td>
+                    <td>Check all possible substrings of length <code>k</code>.</td>
+                </tr>
+                <tr>
+                    <td>Sliding Window</td>
+                    <td>O(n)</td>
+                    <td>O(1)</td>
+                    <td>Reuse the count of white blocks from the previous window.</td>
+                </tr>
+                <tr>
+                    <td>In-Place Counting</td>
+                    <td>O(n)</td>
+                    <td>O(1)</td>
+                    <td>Directly update the minimum operations while iterating.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <div class="faq-section">
+            <details>
+                <summary>1. Can we solve this problem in O(n) time?</summary>
+                <p>Yes, the sliding window and in-place counting approaches solve the problem in O(n) time.</p>
+            </details>
+            <details>
+                <summary>2. Why is the sliding window approach more efficient?</summary>
+                <p>It reuses the count of white blocks from the previous window, reducing redundant calculations.</p>
+            </details>
+            <details>
+                <summary>3. What is the difference between the brute force and sliding window approaches?</summary>
+                <p>The brute force approach checks each substring independently, while the sliding window approach reuses information from the previous window.</p>
+            </details>
+            <details>
+                <summary>4. How do we identify the window in the sliding window approach?</summary>
+                <p>The window is identified by its start and end indices, which are updated as the window slides through the string.</p>
+            </details>
+            <details>
+                <summary>5. Can this problem be solved for non-consecutive blocks?</summary>
+                <p>No, the problem specifically requires consecutive blocks.</p>
+            </details>
+            <details>
+                <summary>6. What is the space complexity of the sliding window approach?</summary>
+                <p>The space complexity is O(1) because it uses a constant amount of extra space.</p>
+            </details>
+            <details>
+                <summary>7. Is there a way to further optimize this solution?</summary>
+                <p>The sliding window approach is already optimal with O(n) time complexity.</p>
+            </details>
+            <details>
+                <summary>8. Why do we need to track the minimum number of white blocks?</summary>
+                <p>Because the minimum number of white blocks corresponds to the minimum number of recoloring operations needed.</p>
+            </details>
+            <details>
+                <summary>9. Can this problem be solved using recursion?</summary>
+                <p>Yes, but it would be less efficient due to the overhead of recursive calls.</p>
+            </details>
+            <details>
+                <summary>10. What are the real-world applications of this problem?</summary>
+                <p>This problem helps in understanding string manipulation and sliding window techniques, which are useful in data analysis and pattern recognition.</p>
+            </details>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer-container">
+        <p>
+            &copy; 2025 
+            <a href="https://mysarkariresult.in/" target="_blank" class="footer-link">
+                MySarkariResult
+            </a>
+            All Rights Reserved |  
+            <a href="https://mysarkariresult.in/Privacy_Policy/privacy-policy.html"> Privacy Policy </a>
+            | 
+            <a href="https://mysarkariresult.in/sitemap.xml"> Sitemap </a>
+        </p>
+    </div>
+</body>
+</html>
