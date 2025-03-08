@@ -1,35 +1,44 @@
-// 1. Fetch the Header and Initialize the Mobile Menu
-document.addEventListener('DOMContentLoaded', function() {
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function () {
+  // 1. Fetch the Header and Initialize the Mobile Menu
   fetch("../Header/header.html") // Adjust this path to match your actual folder structure
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.text();
+    })
     .then(data => {
+      // Insert the header HTML into the container
       document.getElementById("header-container").innerHTML = data;
 
-      // Now that header is in the DOM, select the .menu-toggle, nav, etc.
+      // Initialize the mobile menu toggle
       const mobileMenu = document.getElementById('mobile-menu');
       const nav = document.querySelector('nav');
 
       if (mobileMenu && nav) {
         mobileMenu.addEventListener('click', () => {
-          nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+          nav.classList.toggle('active-nav'); // Toggle the 'active-nav' class
         });
       }
     })
     .catch(error => console.error("Error loading header:", error));
-});
 
-// 2. Fetch the Footer
-document.addEventListener('DOMContentLoaded', function() {
+  // 2. Fetch the Footer
   fetch("../Footer/footer.html") // Adjust path if needed
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.text();
+    })
     .then(data => {
+      // Insert the footer HTML into the container
       document.getElementById("footer-container").innerHTML = data;
     })
     .catch(error => console.error("Error loading footer:", error));
-});
 
-// 3. Job Details Fetching
-document.addEventListener('DOMContentLoaded', () => {
+  // 3. Fetch and Display Job Details
   const jobContainer = document.querySelector('.job-container');
 
   if (!jobContainer) {
@@ -58,17 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
+        // Create job card
         const jobCard = document.createElement('div');
         jobCard.className = 'job-card';
 
+        // Add job title
         const jobTitle = document.createElement('div');
         jobTitle.className = 'job-title';
         jobTitle.textContent = job.title;
 
+        // Add job deadline
         const jobDeadline = document.createElement('div');
         jobDeadline.className = 'job-deadline';
         jobDeadline.textContent = `Last Date: ${job.deadline}`;
 
+        // Append title and deadline to the job card
         jobCard.appendChild(jobTitle);
         jobCard.appendChild(jobDeadline);
 
@@ -77,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.open(job.link, '_blank');
         });
 
+        // Append job card to the container
         jobContainer.appendChild(jobCard);
       });
     })

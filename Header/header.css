@@ -21,17 +21,24 @@ header {
     z-index: 1000;
 }
 
+/* Logo */
 .logo img {
     max-height: 4.5rem;
     max-width: 100%;
     object-fit: contain;
 }
 
+/* Site Name */
 .site-name h1 {
     margin: 0;
     font-size: 2rem;
     text-align: center;
     color: white;
+}
+
+.site-name marquee {
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
 }
 
 /* Navigation Menu */
@@ -80,59 +87,56 @@ nav ul li a:hover {
 
 /* For Medium Screens (Tablets) */
 @media (max-width: 1200px) {
-    .job-container {
-        grid-template-columns: repeat(3, 1fr);
+    .logo img {
+        max-height: 4rem;
     }
-}
 
-@media (max-width: 900px) {
-    .job-container {
-        grid-template-columns: repeat(2, 1fr);
+    .site-name h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
     }
 }
 
 /* For Small Screens (Mobile) */
-@media (max-width: 600px) {
-    .job-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Mobile Navigation */
 @media (max-width: 768px) {
     header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
         padding: 0.5rem 1rem;
+    }
+
+    .logo img {
+        max-height: 3.5rem;
     }
 
     .site-name h1 {
         font-size: 1.5rem;
     }
 
+    .site-name marquee {
+        font-size: 0.8rem;
+    }
+
     nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
         background-color: #ab183d;
         padding: 0.5rem 0;
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem 0;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
     }
 
     nav ul li a {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
     }
 
     .menu-toggle {
@@ -145,12 +149,20 @@ nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
+    .logo img {
+        max-height: 3rem;
+    }
+
     .site-name h1 {
         font-size: 1.2rem;
     }
 
+    .site-name marquee {
+        font-size: 0.7rem;
+    }
+
     nav ul li a {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .menu-toggle {
