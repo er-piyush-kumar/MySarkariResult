@@ -60,7 +60,12 @@
         <priority>0.8</priority>
     </url>
 
-    
+    <url>
+        <loc>https://mysarkariresult.in/Leetcode/leetcode.html</loc>
+        <lastmod>2024-03-06</lastmod> <!-- Update this date to today's date -->
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
 
 </urlset>
