@@ -10,5 +10,12 @@
         "Leetcode": "3446",
         "difficulty": "Medium",
         "link": "https://mysarkariresult.in/Leetcode/3446-sort-matrix-by-diagonals.html"
+    },
+    {
+        "title": "Minimum Recolors to Get K Consecutive Black Blocks",
+        "Leetcode": "2379",
+        "difficulty": "Easy",
+        "link": "https://mysarkariresult.in/Leetcode/2379-minimum-recolors-to-get-k-consecutive-black-blocks.html"
     }
+    
 ]

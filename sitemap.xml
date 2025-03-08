@@ -47,6 +47,13 @@
 
     <!-- Leetcode Post -->
     <url>
+        <loc>https://mysarkariresult.in/Leetcode/leetcode.html</loc>
+        <lastmod>2024-03-06</lastmod> <!-- Update this date to today's date -->
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
         <loc>https://mysarkariresult.in/Leetcode/2965-find-missing-and-repeated-values.html</loc>
         <lastmod>2024-03-06</lastmod> <!-- Update this date to today's date -->
         <changefreq>weekly</changefreq>
@@ -61,8 +68,8 @@
     </url>
 
     <url>
-        <loc>https://mysarkariresult.in/Leetcode/leetcode.html</loc>
-        <lastmod>2024-03-06</lastmod> <!-- Update this date to today's date -->
+        <loc>https://mysarkariresult.in/Leetcode/2379-minimum-recolors-to-get-k-consecutive-black-blocks.html</loc>
+        <lastmod>2024-03-09</lastmod> <!-- Update this date to today's date -->
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
