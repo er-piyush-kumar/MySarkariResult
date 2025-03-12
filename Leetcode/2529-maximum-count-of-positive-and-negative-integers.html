@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Count of Positive and Negative Integers | Leetcode 2529 | MySarkariResult</title>
+    <meta name="description" content="Learn how to solve LeetCode Problem 2529: Maximum Count of Positive and Negative Integers. Detailed explanations of brute force, binary search, and optimized approaches with C++ code examples, time complexity analysis, and FAQs.">
+    <meta name="keywords" content="Leetcode 2529, Maximum Count, Positive Integers, Negative Integers, Brute Force, Binary Search, C++ Code, Time Complexity, MySarkariResult">
+    <meta name="author" content="MySarkariResult">
+    <meta property="og:title" content="Maximum Count of Positive and Negative Integers | Leetcode 2529">
+    <meta property="og:description" content="Learn how to solve LeetCode Problem 2529: Maximum Count of Positive and Negative Integers. Detailed explanations of brute force, binary search, and optimized approaches with C++ code examples, time complexity analysis, and FAQs.">
+    <meta property="og:image" content="https://mysarkariresult.in/Images/logo.png">
+    <meta property="og:url" content="https://mysarkariresult.in/Leetcode/2529-maximum-count-of-positive-and-negative-integers.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maximum Count of Positive and Negative Integers | Leetcode 2529">
+    <meta name="twitter:description" content="Learn how to solve LeetCode Problem 2529: Maximum Count of Positive and Negative Integers. Detailed explanations of brute force, binary search, and optimized approaches with C++ code examples, time complexity analysis, and FAQs.">
+    <meta name="twitter:image" content="https://mysarkariresult.in/Images/logo.png">
+    <meta name="rating" content="general">
+    <meta http-equiv="content-language" content="en">
+    <meta name="distribution" content="global">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical Tag for SEO -->
+    <link rel="canonical" href="https://mysarkariresult.in/Leetcode/2529-maximum-count-of-positive-and-negative-integers.html">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MT47LMPG1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9MT47LMPG1');
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Maximum Count of Positive and Negative Integers | Leetcode 2529",
+        "description": "Learn how to solve LeetCode Problem 2529: Maximum Count of Positive and Negative Integers. Detailed explanations of brute force, binary search, and optimized approaches with C++ code examples, time complexity analysis, and FAQs.",
+        "author": {
+            "@type": "Organization",
+            "name": "MySarkariResult"
+        },
+        "image": "https://mysarkariresult.in/Images/logo.png",
+        "datePublished": "2024-01-01",
+        "publisher": {
+            "@type": "Organization",
+            "name": "MySarkariResult",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://mysarkariresult.in/Images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ab183d;
+            padding: 0.7rem 1.5rem;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-width: 80px;
+            scale: 1.6;
+            object-fit: contain;
+        }
+
+        .site-name h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+            transition: all 0.1s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #911530;
+            border-radius: 5px;
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #ab183d;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: black;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        pre {
+            background: #fafafa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            color: #333;
+        }
+
+        .highlight {
+            background: #ffe7e7;
+            padding: 0.5rem;
+            border-left: 4px solid #ab183d;
+            margin: 1rem 0;
+        }
+
+        table, thead, th, td, tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-section details {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .faq-section summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #ab183d;
+        }
+
+        /* Footer */
+        .footer-container {
+            text-align: center;
+            padding: 1rem;
+            background-color: #ab183d;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        .footer-container a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .site-name h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            main {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-name h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            body {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="https://mysarkariresult.in/">
+                <img src="https://mysarkariresult.in/Images/logo.png" alt="Sarkari Result Logo">
+            </a>
+        </div>
+        <div class="site-name">
+            <h1>Sarkari Result</h1>
+            <marquee>MySarkariResult.in</marquee>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://mysarkariresult.in/">Home</a></li>
+                <li><a href="https://mysarkariresult.in/Leetcode/leetcode.html">Leetcode</a></li>
+                <li><a href="https://mysarkariresult.in/Jobs/job-vacancies.html">Job Vacancies</a></li>
+                <li><a href="https://mysarkariresult.in/Contact_Us/contact.html">Contact Us</a></li>
+                <li><a href="https://mysarkariresult.in/Admit_Card/admit-card.html">Admit Card</a></li>
+                <li><a href="https://mysarkariresult.in/Results/results.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Leetcode 2529: Maximum Count of Positive and Negative Integers</h1>
+        <p>
+            Given a sorted array of integers, we need to find the maximum count between positive and negative integers. The problem is straightforward but teaches efficient ways to handle sorted arrays. Let's dive into different approaches to solve it!
+        </p>
+
+        <h3><u>Problem Link</u>: <a href="https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/">LeetCode 2529</a></h3>
+
+        <h2>Problem Explanation</h2>
+        <p>
+            We are given an array <code>nums</code> sorted in non-decreasing order. We need to return the maximum value between the count of <strong>positive integers</strong> and <strong>negative integers</strong>. Note that zeros are not counted.
+        </p>
+
+        <h3>Example 1</h3>
+        <pre><code><b>Input:</b> nums = [-2,-1,-1,1,2,3]
+<b>Output:</b> 3
+<b>Explanation:</b> There are 3 positive and 3 negative integers. The maximum is 3.</code></pre>
+
+        <h3>Example 2</h3>
+        <pre><code><b>Input:</b> nums = [-3,-2,-1,0,0,1,2]
+<b>Output:</b> 3
+<b>Explanation:</b> 2 positives and 3 negatives. Maximum is 3.</code></pre>
+
+        <hr>
+        <h2>Approach 1: Brute Force (Linear Search)</h2>
+        <p>
+            Iterate through the array and count negative and positive numbers separately. Return the maximum of the two counts.
+        </p>
+
+        <h3>Steps</h3>
+        <ol>
+            <li>Initialize counters for negatives and positives.</li>
+            <li>Loop through each element:
+                <ul>
+                    <li>If element < 0: increment negatives.</li>
+                    <li>If element > 0: increment positives.</li>
+                </ul>
+            </li>
+            <li>Return the maximum of the two counters.</li>
+        </ol>
+
+        <h4>C++ Code</h4>
+        <pre><code>
+class Solution {
+public:
+    int maximumCount(vector<int>& nums) {
+        int neg = 0, pos = 0;
+        for (int num : nums) {
+            if (num < 0) neg++;
+            else if (num > 0) pos++;
+        }
+        return max(neg, pos);
+    }
+};
+        </code></pre>
+
+        <h3>Time Complexity</h3>
+        <p><strong>O(n)</strong> – We traverse the array once.</p>
+
+        <h3>Space Complexity</h3>
+        <p><strong>O(1)</strong> – Constant space for counters.</p>
+
+        <hr>
+        <h2>Approach 2: Binary Search (Optimized)</h2>
+        <p>
+            Since the array is sorted, use binary search to find the first non-negative and first positive index. Compute counts from these indices.
+        </p>
+
+        <h3>Steps</h3>
+        <ol>
+            <li>Use <code>upper_bound</code> to find the first index where elements are > 0. The count of positives is <code>n - pos_index</code>.</li>
+            <li>Use <code>lower_bound</code> to find the first index where elements are >= 0. The count of negatives is this index.</li>
+            <li>Return the maximum of the two counts.</li>
+        </ol>
+
+        <h4>C++ Code</h4>
+        <pre><code>
+class Solution {
+public:
+    int maximumCount(vector<int>& nums) {
+        int n = nums.size();
+        int firstPos = upper_bound(nums.begin(), nums.end(), 0) - nums.begin();
+        int firstNonNeg = lower_bound(nums.begin(), nums.end(), 0) - nums.begin();
+        int pos = n - firstPos;
+        int neg = firstNonNeg;
+        return max(pos, neg);
+    }
+};
+        </code></pre>
+
+        <h3>Time Complexity</h3>
+        <p><strong>O(log n)</strong> – Binary search operations are logarithmic.</p>
+
+        <h3>Space Complexity</h3>
+        <p><strong>O(1)</strong> – No extra space used.</p>
+
+        <hr>
+        <h2>Comparison of Approaches</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Approach</th>
+                    <th>Time Complexity</th>
+                    <th>Space Complexity</th>
+                    <th>Best Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brute Force</td>
+                    <td>O(n)</td>
+                    <td>O(1)</td>
+                    <td>Small input sizes</td>
+                </tr>
+                <tr>
+                    <td>Binary Search</td>
+                    <td>O(log n)</td>
+                    <td>O(1)</td>
+                    <td>Large sorted arrays</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <div class="faq-section">
+            <details>
+                <summary>1. Why is the array sorted?</summary>
+                <p>The sorted property allows us to use efficient algorithms like binary search, reducing time complexity from O(n) to O(log n).</p>
+            </details>
+            <details>
+                <summary>2. How does binary search work here?</summary>
+                <p><code>upper_bound</code> finds the first element > 0, and <code>lower_bound</code> finds the first element ≥ 0. The difference gives counts.</p>
+            </details>
+            <details>
+                <summary>3. What if all elements are negative?</summary>
+                <p>All elements will contribute to the negative count, and positives will be 0. The maximum is the negative count.</p>
+            </details>
+            <details>
+                <summary>4. How are zeros handled?</summary>
+                <p>Zeros are ignored since the problem specifies counting only positive and negative integers.</p>
+            </details>
+            <details>
+                <summary>5. Can there be multiple zeros?</summary>
+                <p>Yes, but they don't affect the result as they are skipped in counting.</p>
+            </details>
+            <details>
+                <summary>6. What's the edge case for this problem?</summary>
+                <p>When the array has all positives or all negatives. The code handles these by returning the respective counts.</p>
+            </details>
+            <details>
+                <summary>7. Why use upper_bound and lower_bound?</summary>
+                <p><code>upper_bound(0)</code> gives the first index after negatives, and <code>lower_bound(0)</code> gives the first non-negative index.</p>
+            </details>
+            <details>
+                <summary>8. What's the follow-up challenge?</summary>
+                <p>Solving in O(log n) time, which is achieved using binary search.</p>
+            </details>
+            <details>
+                <summary>9. Can we solve this without binary search?</summary>
+                <p>Yes, using a linear scan, but it’s less efficient for large arrays.</p>
+            </details>
+            <details>
+                <summary>10. Is this problem similar to finding the pivot in a sorted array?</summary>
+                <p>Yes, both involve finding transition points in sorted data, making binary search ideal.</p>
+            </details>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer-container">
+        <p>
+            &copy; 2025 
+            <a href="https://mysarkariresult.in/" target="_blank" class="footer-link">
+                MySarkariResult
+            </a>
+            All Rights Reserved |  
+            <a href="https://mysarkariresult.in/Privacy_Policy/privacy-policy.html"> Privacy Policy </a>
+            | 
+            <a href="https://mysarkariresult.in/sitemap.xml"> Sitemap </a>
+        </p>
+    </div>
+</body>
+</html>
