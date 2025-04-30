@@ -1,0 +1,208 @@
+<!-- components/footer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --primary: #ab183d;
+            --text-dark: #2d3748;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --font-main: 'Inter', sans-serif;
+            --font-secondary: 'Poppins', sans-serif;
+        }
+
+        footer {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-family: var(--font-main);
+        }
+
+        .footer-container {
+            max-width: 90rem;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            gap: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        .footer-section h3 {
+            font-family: var(--font-main);
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            font-family: var(--font-secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .contact-info {
+            font-family: var(--font-secondary);
+            font-size: 0.85rem;
+        }
+
+        .contact-info a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 1rem 0 0;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.75rem;
+            color: var(--text-dark);
+            font-family: var(--font-secondary);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 48rem) {
+            footer {
+                padding: 1.2rem 0.8rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            
+            .footer-section {
+                margin-bottom: 1rem;
+            }
+            
+            .footer-section h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-container">
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/jobs/">Latest Jobs</a></li>
+                    <li><a href="/results/">Results</a></li>
+                    <li><a href="/admit-card/">Admit Card</a></li>
+                    <li><a href="/answer-key/">Answer Key</a></li>
+                    <li><a href="/admission/">Admission</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="/syllabus/">Syllabus</a></li>
+                    <li><a href="/important/">Important</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/terms-conditions/">Terms & Conditions</a></li>
+                    <li><a href="/disclaimer/">Disclaimer</a></li>
+                    <li><a href="/refund-policy/">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <p><a href="mailto:ermrpiyushkumar@gmail.com">📧 contact@mysarkariresult.in</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © <span id="currentYear"></span> MySarkariResult.in - All Rights Reserved
+        </div>
+
+        <div class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
