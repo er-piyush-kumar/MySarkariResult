@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:job="http://www.sitemaps.org/schemas/sitemap-job/0.1">
+        xmlns:job="http://www.sitemaps.org/schemas/sitemap-job/0.1">
   
-  <!-- First Job Post -->
   <url>
     <loc>https://www.mysarkariresult.in/Jobs/union-bank-so-recruitment-2025.html</loc>
     <lastmod>2025-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <job:job>
-      <job:title>Union Bank SO Assistant Manager (Credit & IT) Recruitment 2025</job:title>
+      <job:title>Union Bank SO Assistant Manager (Credit &amp; IT) Recruitment 2025</job:title>
       <job:salary>₹36,000 - ₹63,840 per month</job:salary>
       <job:salary_currency>INR</job:salary_currency>
       <job:salary_type>MONTHLY</job:salary_type>
@@ -23,13 +22,4 @@
     </job:job>
   </url>
 
-  <!-- Add more job posts in the same format below -->
-  <!-- Example 2 -->
-  <!--
-  <url>
-    <loc>https://www.mysarkariresult.in/Jobs/another-job-post.html</loc>
-    ...
-  </url>
-  -->
-  
 </urlset>
