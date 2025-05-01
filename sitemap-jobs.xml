@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:job="http://www.sitemaps.org/schemas/sitemap-job/0.1">
   
+  <!-- Union Bank SO Recruitment -->
   <url>
     <loc>https://www.mysarkariresult.in/Jobs/union-bank-so-recruitment-2025.html</loc>
     <lastmod>2025-05-01</lastmod>
@@ -17,6 +18,27 @@
       <job:job_posting_type>FULL_TIME</job:job_posting_type>
       <job:company_name>Union Bank of India</job:company_name>
       <job:company_website>https://www.unionbankofindia.co.in</job:company_website>
+      <job:employment_type>Government</job:employment_type>
+      <job:date_posted>2025-05-01</job:date_posted>
+    </job:job>
+  </url>
+
+  <!-- Bihar SSC Laboratory Assistant Recruitment -->
+  <url>
+    <loc>https://www.mysarkariresult.in/Jobs/bihar-ssc-laboratory-assistant-recruitment-2025.html</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <job:job>
+      <job:title>Bihar SSC Laboratory Assistant Recruitment 2025</job:title>
+      <job:salary>₹25,000 - ₹35,000 per month</job:salary>
+      <job:salary_currency>INR</job:salary_currency>
+      <job:salary_type>MONTHLY</job:salary_type>
+      <job:expiration_date>2025-06-15</job:expiration_date>
+      <job:job_location>Bihar, India</job:job_location>
+      <job:job_posting_type>FULL_TIME</job:job_posting_type>
+      <job:company_name>Bihar Staff Selection Commission</job:company_name>
+      <job:company_website>https://bssc.bih.nic.in</job:company_website>
       <job:employment_type>Government</job:employment_type>
       <job:date_posted>2025-05-01</job:date_posted>
     </job:job>
