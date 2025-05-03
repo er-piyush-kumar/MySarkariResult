@@ -1,11 +1,10 @@
-<!-- components/header.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MySarkariResult</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,26 +20,38 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
         }
 
         :root {
             --primary: #ab183d;
             --primary-dark: #911530;
+            --primary-light: #c12a4d;
             --text-light: #ffffff;
-            --transition: all 0.3s ease-out;
+            --text-lighter: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --space-sm: 0.5rem;
             --space-md: 1rem;
             --space-lg: 1.5rem;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
         }
 
         header {
             background: var(--primary);
             padding: var(--space-md) 0;
-            /* position: fixed; */
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
+            position: sticky;
         }
 
         .header-container {
@@ -57,34 +68,57 @@
             display: flex;
             flex-direction: column;
             text-decoration: none;
+            position: relative;
+            padding: 0.25rem 0;
+            z-index: 1001;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .site-name {
             font-family: 'Inter', sans-serif;
             font-size: clamp(1.5rem, 4vw, 1.8rem);
             font-weight: 700;
-            color: white;
-            line-height: 1.2;
+            color: var(--text-light);
+            line-height: 1;
             letter-spacing: -0.05em;
+            transition: var(--transition);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .site-url {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-top: 0.25rem;
+            font-size: 0.65rem;
+            color: var(--text-lighter);
             letter-spacing: 0.05em;
+            transition: var(--transition);
+            opacity: 0.9;
+            margin-top: 0.15rem;
+            font-weight: 500;
+            text-align: center;
         }
 
-        nav ul {
+        .site-branding:hover .site-name {
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .site-branding:hover .site-url {
+            opacity: 1;
+        }
+
+        .msr-main-nav ul {
             display: flex;
             gap: var(--space-sm);
             list-style: none;
         }
 
-        nav a {
+        .msr-main-nav a {
             font-family: 'Inter', sans-serif;
-            color: white;
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -95,68 +129,178 @@
             align-items: center;
             gap: 0.5rem;
             white-space: nowrap;
+            position: relative;
         }
 
-        nav a:hover {
+        .msr-main-nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .msr-main-nav a:hover {
             background: var(--primary-dark);
             transform: translateY(-0.125rem);
+            box-shadow: var(--shadow-sm);
         }
 
-        .menu-toggle {
-            display: none;
+        .msr-main-nav a:hover::before {
+            width: 60%;
+        }
+
+        .msr-main-nav a i {
+            transition: var(--transition);
+        }
+
+        .msr-main-nav a:hover i {
+            transform: scale(1.1);
+        }
+
+        .msr-mobile-toggle {
             background: none;
             border: none;
             cursor: pointer;
-            color: white;
+            color: var(--text-light);
             font-size: 1.5rem;
             padding: var(--space-sm);
+            transition: var(--transition);
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1001;
+            margin-left: auto;
+        }
+
+        .msr-mobile-toggle .hamburger {
+            width: 24px;
+            height: 2px;
+            background: white;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .msr-mobile-toggle .hamburger:before,
+        .msr-mobile-toggle .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .msr-mobile-toggle .hamburger:before {
+            transform: translateY(-7px);
+        }
+
+        .msr-mobile-toggle .hamburger:after {
+            transform: translateY(7px);
+        }
+
+        .msr-mobile-toggle.active .hamburger {
+            background: transparent;
+        }
+
+        .msr-mobile-toggle.active .hamburger:before {
+            transform: rotate(45deg);
+        }
+
+        .msr-mobile-toggle.active .hamburger:after {
+            transform: rotate(-45deg);
         }
 
         /* Mobile Styles */
         @media (max-width: 48rem) {
             .header-container {
                 padding: 0 var(--space-md);
-                gap: var(--space-md);
+                position: relative;
             }
             
+            .site-branding {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: max-content;
+                padding: 0;
+                margin: 0;
+            }
+
             .site-name {
                 font-size: clamp(1.25rem, 5vw, 1.5rem);
             }
 
-            nav {
+            .msr-main-nav {
                 position: fixed;
-                top: 4.5rem;
+                top: 0;
                 left: -100%;
                 background: var(--primary);
                 width: 100%;
-                height: calc(100vh - 4.5rem);
-                padding: var(--space-lg);
+                height: 100vh;
+                padding: 5rem var(--space-lg) var(--space-lg);
                 transition: var(--transition);
-                z-index: 999;
+                z-index: 1000;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             }
 
-            nav.active {
+            .msr-main-nav.active {
                 left: 0;
             }
 
-            nav ul {
+            .msr-main-nav ul {
                 flex-direction: column;
-                gap: var(--space-sm);
+                gap: var(--space-md);
+                width: 100%;
+                max-width: 300px;
             }
 
-            nav a {
-                padding: var(--space-md);
+            .msr-main-nav a {
+                padding: 0.8rem;
                 font-size: 1rem;
+                border-radius: 0.5rem;
+                justify-content: center;
+                background: rgba(255,255,255,0.1);
+                text-align: center;
             }
 
-            .menu-toggle {
-                display: block;
+            .msr-main-nav a:hover {
+                transform: scale(1.02);
+                background: var(--primary-light);
+            }
+
+            .msr-main-nav a:hover::before {
+                width: 40%;
+            }
+
+            .msr-mobile-toggle {
+                display: flex;
+            }
+        }
+
+        /* Hide mobile toggle on desktop */
+        @media (min-width: 48.0625rem) {
+            .msr-mobile-toggle {
+                display: none;
             }
         }
 
         /* Tablet Styles */
         @media (min-width: 48.0625rem) and (max-width: 64rem) {
-            nav a {
+            .msr-main-nav a {
                 padding: 0.5rem 0.75rem;
                 font-size: 0.875rem;
             }
@@ -166,16 +310,17 @@
 <body>
     <header>
         <div class="header-container">
-            <a href="https://mysarkariresult.in/" rel="noopener noreferrer" class="site-branding" >
-                <div class="site-name">MySarkariResult</div>
-                <div class="site-url"><center>MySarkariResult.in</center></div>
+            <a href="https://mysarkariresult.in/" rel="noopener noreferrer" class="site-branding">
+                <div class="site-name">MySarkariResult
+                    <span class="site-url">MySarkariResult.in</span>
+                </div>
             </a>
 
-            <nav>
+            <nav class="msr-main-nav" id="msr-unique-nav">
                 <ul>
                     <li><a href="https://mysarkariresult.in/"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#"><i class="fas fa-briefcase"></i> Jobs</a></li>
-                    <li><a href=""><i class="fas fa-trophy"></i> Results</a></li>
+                    <li><a href="https://mysarkariresult.in/Results/results.html"><i class="fas fa-trophy"></i> Results</a></li>
                     <li><a href="#"><i class="fas fa-id-card"></i> Admit Card</a></li>
                     <li><a href="#"><i class="fas fa-key"></i> Answer Key</a></li>
                     <li><a href="#"><i class="fas fa-book"></i> Syllabus</a></li>
@@ -183,36 +328,56 @@
                 </ul>
             </nav>
 
-            <button class="menu-toggle" aria-label="Menu">
-                <i class="fas fa-bars"></i>
+            <button class="msr-mobile-toggle" id="msr-unique-toggle" aria-label="Menu">
+                <span class="hamburger"></span>
             </button>
         </div>
     </header>
 
     <script>
-        // Mobile Menu Handler
         document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('nav');
+            const menuToggle = document.getElementById('msr-unique-toggle');
+            const nav = document.getElementById('msr-unique-nav');
 
             menuToggle.addEventListener('click', () => {
                 nav.classList.toggle('active');
-                
-                // Toggle between hamburger and close icon
-                const icon = menuToggle.querySelector('i');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
+                menuToggle.classList.toggle('active');
+                document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
             });
 
-            // Close menu when clicking on nav links
-            document.querySelectorAll('nav a').forEach(link => {
+            document.querySelectorAll('#msr-unique-nav a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (window.innerWidth <= 768) {
                         nav.classList.remove('active');
-                        const icon = menuToggle.querySelector('i');
-                        icon.classList.replace('fa-times', 'fa-bars');
+                        menuToggle.classList.remove('active');
+                        document.body.style.overflow = '';
                     }
                 });
+            });
+
+            document.addEventListener('mousedown', (e) => {
+                if (e.target.closest('.site-branding, .msr-mobile-toggle')) {
+                    e.target.blur();
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 10) {
+                    header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                    header.style.background = 'var(--primary-dark)';
+                } else {
+                    header.style.boxShadow = 'var(--shadow-md)';
+                    header.style.background = 'var(--primary)';
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             });
         });
     </script>
