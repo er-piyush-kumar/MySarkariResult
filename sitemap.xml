@@ -12,13 +12,13 @@
         <priority>1.0</priority>
     </url>
     
-    <!-- Latest Results Section -->
-    <!-- <url>
-        <loc>https://mysarkariresult.in/latest-results</loc>
-        <lastmod>2025-05-01</lastmod>
+    <!-- Results Section -->
+    <url>
+        <loc>https://mysarkariresult.in/Results/results.html</loc>
+        <lastmod>2025-05-03</lastmod>
         <changefreq>hourly</changefreq>
         <priority>0.9</priority>
-    </url> -->
+    </url>
     
     <!-- Admit Cards Section -->
     <!-- <url>
@@ -27,27 +27,6 @@
         <changefreq>hourly</changefreq>
         <priority>0.9</priority>
     </url> -->
-    
-    <!-- Recent Jobs Section -->
-    <!-- <url>
-        <loc>https://mysarkariresult.in/recent-jobs</loc>
-        <lastmod>2025-01-15</lastmod>
-        <changefreq>hourly</changefreq>
-        <priority>0.9</priority>
-    </url> -->
-    <url>
-        <loc>https://www.mysarkariresult.in/Jobs/union-bank-so-recruitment-2025.html</loc>
-        <lastmod>2025-05-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mysarkariresult.in/Jobs/bihar-ssc-laboratory-assistant-recruitment-2025.html</loc>
-        <lastmod>2025-05-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
     
     <!-- Answer Keys Section -->
     <!-- <url>
