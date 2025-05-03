@@ -1,17 +1,181 @@
 <!-- components/header.html -->
-<div class="msr-header-wrapper">
-    <header class="msr-header">
-        <div class="msr-header-inner">
-            <a href="https://mysarkariresult.in/" class="msr-brand">
-                <div class="msr-site-title">MySarkariResult</div>
-                <div class="msr-site-domain">MySarkariResult.in</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ab183d;
+            --primary-dark: #911530;
+            --text-light: #ffffff;
+            --transition: all 0.3s ease-out;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+        }
+
+        header {
+            background: var(--primary);
+            padding: var(--space-md) 0;
+            /* position: fixed; */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 90rem;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            gap: var(--space-lg);
+        }
+
+        .site-branding {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .site-name {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            letter-spacing: -0.05em;
+        }
+
+        .site-url {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+        }
+
+        nav a {
+            font-family: 'Inter', sans-serif;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.6rem 1rem;
+            border-radius: 0.375rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            background: var(--primary-dark);
+            transform: translateY(-0.125rem);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+            padding: var(--space-sm);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 48rem) {
+            .header-container {
+                padding: 0 var(--space-md);
+                gap: var(--space-md);
+            }
+            
+            .site-name {
+                font-size: clamp(1.25rem, 5vw, 1.5rem);
+            }
+
+            nav {
+                position: fixed;
+                top: 4.5rem;
+                left: -100%;
+                background: var(--primary);
+                width: 100%;
+                height: calc(100vh - 4.5rem);
+                padding: var(--space-lg);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+
+            nav a {
+                padding: var(--space-md);
+                font-size: 1rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 48.0625rem) and (max-width: 64rem) {
+            nav a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="https://mysarkariresult.in/" rel="noopener noreferrer" class="site-branding" >
+                <div class="site-name">MySarkariResult</div>
+                <div class="site-url"><center>MySarkariResult.in</center></div>
             </a>
 
-            <nav class="msr-main-nav" id="msr-main-navigation">
-                <ul class="msr-nav-menu">
+            <nav>
+                <ul>
                     <li><a href="https://mysarkariresult.in/"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#"><i class="fas fa-briefcase"></i> Jobs</a></li>
-                    <li><a href="#"><i class="fas fa-trophy"></i> Results</a></li>
+                    <li><a href="https://mysarkariresult.in/Results/results.html"><i class="fas fa-trophy"></i> Results</a></li>
                     <li><a href="#"><i class="fas fa-id-card"></i> Admit Card</a></li>
                     <li><a href="#"><i class="fas fa-key"></i> Answer Key</a></li>
                     <li><a href="#"><i class="fas fa-book"></i> Syllabus</a></li>
@@ -19,87 +183,38 @@
                 </ul>
             </nav>
 
-            <button class="msr-mobile-toggle" id="msr-mobile-toggle-button" aria-label="Menu">
+            <button class="menu-toggle" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <style>
-        /* Mobile Styles */
-        @media (max-width: 48rem) {
-            .msr-header-inner {
-                padding: 0 var(--msr-space-md);
-                gap: var(--msr-space-md);
-            }
-            
-            .msr-site-title {
-                font-size: clamp(1.25rem, 5vw, 1.5rem);
-            }
-
-            #msr-main-navigation {
-                position: fixed;
-                top: 4.5rem;
-                left: -100%;
-                background: var(--msr-primary);
-                width: 100%;
-                height: calc(100vh - 4.5rem);
-                padding: var(--msr-space-lg);
-                transition: var(--msr-transition);
-                z-index: 999;
-            }
-
-            #msr-main-navigation.active {
-                left: 0;
-            }
-
-            .msr-nav-menu {
-                flex-direction: column;
-                gap: var(--msr-space-sm);
-            }
-
-            .msr-main-nav a {
-                padding: var(--msr-space-md);
-                font-size: 1rem;
-            }
-
-            #msr-mobile-toggle-button {
-                display: block;
-            }
-        }
-    </style>
-
     <script>
-        // Mobile Menu Handler with unique IDs
+        // Mobile Menu Handler
         document.addEventListener('DOMContentLoaded', () => {
-            const toggleButton = document.getElementById('msr-mobile-toggle-button');
-            const mainNav = document.getElementById('msr-main-navigation');
-            
-            if (toggleButton && mainNav) {
-                toggleButton.addEventListener('click', () => {
-                    mainNav.classList.toggle('active');
-                    
-                    // Toggle between hamburger and close icon
-                    const icon = toggleButton.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                
+                // Toggle between hamburger and close icon
+                const icon = menuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close menu when clicking on nav links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        nav.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.replace('fa-times', 'fa-bars');
                     }
                 });
-
-                // Close menu when clicking on nav links
-                document.querySelectorAll('#msr-main-navigation a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (window.innerWidth <= 768) {
-                            mainNav.classList.remove('active');
-                            const icon = toggleButton.querySelector('i');
-                            if (icon) {
-                                icon.classList.replace('fa-times', 'fa-bars');
-                            }
-                        }
-                    });
-                });
-            }
+            });
         });
     </script>
-</div>
+</body>
+</html>
