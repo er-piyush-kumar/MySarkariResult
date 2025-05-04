@@ -1,214 +1,512 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/CollectionPage">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Government Job Openings 2025 | MySarkariResult</title>
-    <meta name="description" content="Find latest government job vacancies in India 2025 - Banking, SSC, State Govt Jobs with application dates, eligibility criteria and direct apply links">
-    <link rel="canonical" href="https://www.mysarkariresult.in/jobs.html" />
+    <title>Latest Govt Jobs 2025 | MySarkariResult | Naukri</title>
+    <meta name="description" 
+          content="Daily updated list of 2500+ active government jobs 2025 with direct application links. Find Central/State Govt, PSU, Bank, Railway jobs with eligibility criteria, deadlines and how to apply details.">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 day">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mysarkariresult.in/Jobs/jobs.html">
+    <meta property="og:title" content="Latest Govt Jobs 2025 | MySarkariResult | Naukri">
+    <meta property="og:description" 
+          content="Daily updated list of active government jobs with direct application links. Find Central/State Govt, PSU, Bank, Railway vacancies.">
+    <meta property="og:image" content="https://mysarkariresult.in/assets/images/logo.png">
+    <meta property="og:site_name" content="MySarkariResult">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mysarkariresult.in/Jobs/jobs.html">
+    <meta property="twitter:title" content="Latest Govt Jobs 2025 | MySarkariResult | Naukri">
+    <meta property="twitter:description" 
+          content="Daily updated list of active government jobs with direct application links and eligibility details.">
+    <meta property="twitter:image" content="https://mysarkariresult.in/assets/images/logo.png">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mysarkariresult.in/Jobs/jobs.html">
+
+    <!-- Google News/Article Tags -->
+    <meta name="news_keywords" content="sarkari results, my sarkari results, sarkari naukri, latest government job 2025, mysarkariresult, government jobs, sarkari naukri, latest govt jobs, PSU jobs, bank jobs">
+    <meta name="standout" content="https://mysarkariresult.in/Jobs/jobs.html">
+
+    <!-- Styles -->
     <style>
-        .job-container {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
+        :root {
+            --primary: #ab183d;
+            --secondary: #2d3748;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --font-main: 'Inter', sans-serif;
         }
-        .job-card {
-            border: 1px solid #e1e1e1;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .job-title {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-top: 0;
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--secondary);
+            background: var(--bg-light);
         }
-        .job-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 10px 0;
+
+        .content-container {
+            max-width: 75rem;
+            width: 95%;
+            margin: 0 auto 2.5rem;
+            padding: 1.25rem 0.9375rem;
+            flex: 1;
         }
-        .meta-item {
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 0.8rem 0;
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.8125rem, 2vw, 0.9375rem);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--secondary);
+            margin: 0 0.3125rem;
+        }
+
+        /* Section Styles */
+        .section-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 0.125rem solid var(--primary);
+            padding-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            color: #34495e;
+            gap: 0.75rem;
         }
-        .meta-item i {
-            margin-right: 5px;
-            color: #7f8c8d;
+
+        .section-title i {
+            font-size: 1.25rem;
         }
-        .apply-btn {
-            background-color: #3498db;
-            color: white;
-            padding: 8px 15px;
+
+        /* Content List */
+        .content-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            background: var(--bg-light);
+            transition: all 0.3s ease;
+            border-left: 0.25rem solid transparent;
+        }
+
+        .content-item:hover {
+            transform: translateX(0.5rem);
+            border-left-color: var(--primary);
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        }
+
+        .content-item a {
+            color: var(--secondary);
             text-decoration: none;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
+            display: block;
+            font-weight: 500;
         }
-        .apply-btn:hover {
-            background-color: #2980b9;
+
+        .content-item a:hover {
+            color: var(--primary);
         }
-        .last-updated {
-            font-size: 0.9rem;
-            color: #7f8c8d;
+
+        /* Info Content */
+        .info-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
         }
-        .breadcrumb {
-            margin-bottom: 20px;
+
+        .info-content h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-content h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3.75rem;
+            height: 0.1875rem;
+            background: var(--primary);
+        }
+
+        .info-content ul, 
+        .info-content ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .info-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        /* Job Categories */
+        .job-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+            border-left: 0.25rem solid var(--primary);
+        }
+
+        .category-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-container {
+                width: 100%;
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .section-card {
+                padding: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 1.35rem;
+            }
+
+            .info-content {
+                padding: 1.5rem;
+            }
+
+            .job-categories {
+                grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .section-card {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .content-item {
+                padding: 0.875rem;
+            }
+
+            .info-content {
+                padding: 1.25rem;
+            }
+
+            .job-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .content-container {
+                padding: 0.5rem;
+            }
+
+            .section-card {
+                padding: 0.875rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
         }
     </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="job-container">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <main class="content-container">
+        <!-- Breadcrumb -->
         <div class="breadcrumb">
-            <a href="/">Home</a> &gt; <a href="/Jobs/">Jobs</a> &gt; Current Openings
+            <a href="https://mysarkariresult.in/">Home</a> <span>»</span>
+            <a href="https://mysarkariresult.in/Jobs/jobs.html">Jobs</a> <span>»</span>
+            <span>All Government Jobs 2025</span>
         </div>
-        
-        <h1>Latest Government Job Openings 2025</h1>
-        
-        <!-- Union Bank Job -->
-        <div class="job-card" itemscope itemtype="https://schema.org/JobPosting">
-            <h2 class="job-title" itemprop="title">Union Bank SO Assistant Manager (Credit & IT) Recruitment 2025</h2>
-            
-            <div class="job-meta">
-                <div class="meta-item">
-                    <i>📅</i> <span itemprop="datePosted">Posted: May 1, 2025</span>
+
+        <!-- Jobs List -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Recent Government Jobs</h2>
+            <ul class="content-list" id="jobs-container"></ul>
+            <div id="loading" class="content-item">Loading government jobs...</div>
+        </div>
+
+        <!-- Job Categories -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-list"></i> Job Categories</h2>
+            <div class="job-categories">
+                <div class="category-card">
+                    <h3>Central Government Jobs</h3>
+                    <p>UPSC, SSC, Railway, Defense, and Ministry-level vacancies</p>
                 </div>
-                <div class="meta-item">
-                    <i>⏳</i> <span itemprop="validThrough">Last Date: May 20, 2025</span>
+                <div class="category-card">
+                    <h3>State Government Jobs</h3>
+                    <p>State PSCs, Police, Teaching, and District-level posts</p>
                 </div>
-                <div class="meta-item">
-                    <i>💰</i> <span itemprop="baseSalary" itemscope itemtype="https://schema.org/MonetaryAmount">
-                        Salary: <span itemprop="value" itemscope itemtype="https://schema.org/QuantitativeValue">
-                            ₹36,000 - ₹63,840 <span itemprop="unitText">per month</span>
-                        </span>
-                    </span>
+                <div class="category-card">
+                    <h3>PSU & Bank Jobs</h3>
+                    <p>ONGC, SAIL, Banking, and Financial sector recruitments</p>
                 </div>
-                <div class="meta-item">
-                    <i>📍</i> <span itemprop="jobLocation" itemscope itemtype="https://schema.org/Place">
-                        <span itemprop="address">Multiple Locations Across India</span>
-                    </span>
+                <div class="category-card">
+                    <h3>10th/12th Pass Jobs</h3>
+                    <p>Opportunities for non-graduate candidates</p>
                 </div>
             </div>
-            
-            <div itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization">
-                <strong>Organization:</strong> <span itemprop="name">Union Bank of India</span>
-                (<a href="https://www.unionbankofindia.co.in" itemprop="url" target="_blank">Official Website</a>)
+        </div>
+
+        <!-- Informative Content -->
+        <article class="info-content">
+            <h2>How to Find and Apply for Government Jobs</h2>
+            <p>MySarkariResult simplifies your government job search with these features:</p>
+            <ul>
+                <li><strong>Daily Updates:</strong> Our team verifies each listing from official sources</li>
+                <li><strong>Direct Application Links:</strong> One-click access to official portals</li>
+                <li><strong>Detailed Eligibility:</strong> Clear criteria for each position</li>
+                <li><strong>Category Filters:</strong> Find reserved category vacancies easily</li>
+            </ul>
+
+            <h3>Viewing Job Details</h3>
+            <p>Each job listing includes:</p>
+            <ol>
+                <li>Complete vacancy details</li>
+                <li>Application deadlines</li>
+                <li>Fee structure</li>
+                <li>Selection process</li>
+                <li>Direct link to official notification</li>
+            </ol>
+
+            <h2>Why Government Jobs?</h2>
+            <div class="job-categories">
+                <div class="category-card">
+                    <h3><i class="fas fa-shield-alt"></i> Job Security</h3>
+                    <p>Permanent employment with assured career progression</p>
+                </div>
+                <div class="category-card">
+                    <h3><i class="fas fa-rupee-sign"></i> Salary Benefits</h3>
+                    <p>7th Pay Commission scales with regular increments</p>
+                </div>
+                <div class="category-card">
+                    <h3><i class="fas fa-medal"></i> Perks</h3>
+                    <p>Pension, medical benefits, and housing allowances</p>
+                </div>
             </div>
-            
-            <p class="last-updated">Last updated: May 1, 2025</p>
-            
-            <a href="/Jobs/union-bank-so-recruitment-2025.html" class="apply-btn" itemprop="url">View Details & Apply</a>
-            
-            <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "JobPosting",
-                "title": "Union Bank SO Assistant Manager (Credit & IT) Recruitment 2025",
-                "datePosted": "2025-05-01",
-                "validThrough": "2025-05-20",
-                "description": "Union Bank of India recruitment for Specialist Officer (Credit & IT) positions. 150 vacancies for Assistant Manager grade.",
-                "employmentType": "FULL_TIME",
-                "hiringOrganization": {
-                    "@type": "Organization",
-                    "name": "Union Bank of India",
-                    "sameAs": "https://www.unionbankofindia.co.in"
-                },
-                "jobLocation": {
-                    "@type": "Place",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "IN"
-                    }
-                },
-                "baseSalary": {
-                    "@type": "MonetaryAmount",
-                    "currency": "INR",
-                    "value": {
-                        "@type": "QuantitativeValue",
-                        "minValue": 36000,
-                        "maxValue": 63840,
-                        "unitText": "MONTH"
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Component Loader with Error Handling
+        const loadComponent = async (componentName) => {
+            try {
+                const response = await fetch(`../components/${componentName}.html`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                document.getElementById(`${componentName}-container`).innerHTML = html;
+                
+                // Initialize mobile menu if header is loaded
+                if (componentName === 'header') {
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const nav = document.querySelector('nav');
+                    if (menuToggle && nav) {
+                        menuToggle.addEventListener('click', () => {
+                            nav.classList.toggle('active');
+                            const icon = menuToggle.querySelector('i');
+                            icon.classList.toggle('fa-bars');
+                            icon.classList.toggle('fa-times');
+                        });
                     }
                 }
+            } catch (error) {
+                console.error(`Error loading ${componentName}:`, error);
+                document.getElementById(`${componentName}-container`).innerHTML = `
+                    <div class="error" style="padding:1rem;background:#ffecec;color:#d32f2f;">
+                        Error loading component. <button onclick="window.location.reload()" style="padding:0.25rem 0.5rem;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;">Refresh</button>
+                    </div>
+                `;
             }
-            </script>
-        </div>
-        
-        <!-- Bihar SSC Job -->
-        <div class="job-card" itemscope itemtype="https://schema.org/JobPosting">
-            <h2 class="job-title" itemprop="title">Bihar SSC Laboratory Assistant Recruitment 2025</h2>
+        };
+
+        // Jobs Loader with Cache Handling
+        const loadJobs = async () => {
+            const container = document.getElementById('jobs-container');
+            const loading = document.getElementById('loading');
             
-            <div class="job-meta">
-                <div class="meta-item">
-                    <i>📅</i> <span itemprop="datePosted">Posted: May 1, 2025</span>
-                </div>
-                <div class="meta-item">
-                    <i>⏳</i> <span itemprop="validThrough">Last Date: June 15, 2025</span>
-                </div>
-                <div class="meta-item">
-                    <i>💰</i> <span itemprop="baseSalary" itemscope itemtype="https://schema.org/MonetaryAmount">
-                        Salary: <span itemprop="value" itemscope itemtype="https://schema.org/QuantitativeValue">
-                            ₹25,000 - ₹35,000 <span itemprop="unitText">per month</span>
-                        </span>
-                    </span>
-                </div>
-                <div class="meta-item">
-                    <i>📍</i> <span itemprop="jobLocation" itemscope itemtype="https://schema.org/Place">
-                        <span itemprop="address">Bihar, India</span>
-                    </span>
-                </div>
-            </div>
-            
-            <div itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization">
-                <strong>Organization:</strong> <span itemprop="name">Bihar Staff Selection Commission</span>
-                (<a href="https://bssc.bih.nic.in" itemprop="url" target="_blank">Official Website</a>)
-            </div>
-            
-            <p class="last-updated">Last updated: May 1, 2025</p>
-            
-            <a href="/Jobs/bihar-ssc-laboratory-assistant-recruitment-2025.html" class="apply-btn" itemprop="url">View Details & Apply</a>
-            
-            <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "JobPosting",
-                "title": "Bihar SSC Laboratory Assistant Recruitment 2025",
-                "datePosted": "2025-05-01",
-                "validThrough": "2025-06-15",
-                "description": "Bihar SSC recruitment for Laboratory Assistant positions. 250 vacancies for various government laboratories.",
-                "employmentType": "FULL_TIME",
-                "hiringOrganization": {
-                    "@type": "Organization",
-                    "name": "Bihar Staff Selection Commission",
-                    "sameAs": "https://bssc.bih.nic.in"
-                },
-                "jobLocation": {
-                    "@type": "Place",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressRegion": "Bihar",
-                        "addressCountry": "IN"
-                    }
-                },
-                "baseSalary": {
-                    "@type": "MonetaryAmount",
-                    "currency": "INR",
-                    "value": {
-                        "@type": "QuantitativeValue",
-                        "minValue": 25000,
-                        "maxValue": 35000,
-                        "unitText": "MONTH"
-                    }
+            try {
+                // Try to get from cache first
+                const cachedJobs = sessionStorage.getItem('jobsData');
+                let jobs = [];
+                
+                if (cachedJobs) {
+                    jobs = JSON.parse(cachedJobs);
+                } else {
+                    const response = await fetch('../assets/data/jobs.json');
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    jobs = await response.json();
+                    // Cache for 1 hour
+                    sessionStorage.setItem('jobsData', JSON.stringify(jobs));
                 }
+
+                loading.style.display = 'none';
+                
+                if (jobs.length === 0) {
+                    container.innerHTML = `<li class="content-item">No active vacancies currently. Check back later.</li>`;
+                    return;
+                }
+
+                container.innerHTML = jobs.map(job => `
+                    <li class="content-item">
+                        <a href="${job.link}" aria-label="${job.title}">
+                            ${job.title}
+                        </a>
+                    </li>
+                `).join('');
+                
+                // Update Google News Schema
+                updateNewsSchema(jobs);
+
+            } catch (error) {
+                console.error('Jobs load error:', error);
+                loading.innerHTML = `
+                    <div class="content-item" style="color:#d32f2f;">
+                        <p>Failed to load jobs. Please check your internet connection.</p>
+                        <button onclick="loadJobs()" style="margin-top:0.5rem;padding:0.25rem 0.75rem;background:var(--primary);color:white;border:none;border-radius:4px;">Retry</button>
+                    </div>
+                `;
             }
-            </script>
-        </div>
-    </div>
+        };
+
+        // Google News Schema Updater
+        function updateNewsSchema(jobs) {
+            const latestJobs = jobs.slice(0, 5);
+            const newsSchema = {
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                "headline": "Latest Government Job Openings - " + new Date().toLocaleDateString(),
+                "datePublished": new Date().toISOString(),
+                "dateModified": new Date().toISOString(),
+                "author": {
+                    "@type": "Organization",
+                    "name": "MySarkariResult",
+                    "url": "https://mysarkariresult.in"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "MySarkariResult",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://mysarkariresult.in/assets/images/logo.png"
+                    }
+                },
+                "description": "Latest government job vacancies including " + latestJobs.map(j => j.title).join(', '),
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://mysarkariresult.in/Jobs/jobs.html"
+                }
+            };
+            
+            // Remove old schema if exists
+            const oldSchema = document.querySelector('script[type="application/ld+json"][data-news-schema]');
+            if (oldSchema) oldSchema.remove();
+            
+            // Add new schema
+            const script = document.createElement('script');
+            script.type = "application/ld+json";
+            script.setAttribute('data-news-schema', 'true');
+            script.text = JSON.stringify(newsSchema);
+            document.head.appendChild(script);
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load components and jobs
+            Promise.all([
+                loadComponent('header'),
+                loadComponent('footer'),
+                loadJobs()
+            ]).catch(error => {
+                console.error('Initialization error:', error);
+            });
+            
+            // Back to Top Button (if in footer)
+            window.addEventListener('scroll', () => {
+                const backToTop = document.getElementById('backToTop');
+                if (backToTop) {
+                    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

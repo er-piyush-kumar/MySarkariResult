@@ -158,7 +158,6 @@
                 <li class="content-item">
                     <a href="${item.link}" aria-label="${item.title}">
                         <span>${item.title}</span>
-                        <span class="update-time">${item.date}</span>
                     </a>
                 </li>
             `).join('');
@@ -177,7 +176,7 @@
                 const sections = {
                     'results-list': 'data/results.json',
                     'admit-card-list': 'data/admit-cards.json',
-                    'jobs-list': 'data/jobs.json',
+                    'jobs-list': './assets/data/jobs.json',
                     'answer-key-list': 'data/answer-keys.json',
                     'syllabus-list': 'data/syllabus.json',
                     'admission-list': 'data/admissions.json'
@@ -424,7 +423,7 @@
             <div class="section-card">
                 <h2 class="section-title"><i class="fas fa-briefcase"></i> Recent Jobs</h2>
                 <ul class="content-list" id="jobs-list"></ul>
-                <a href="/recent-jobs" class="view-more-btn">View More Jobs</a>
+                <a href="./Jobs/jobs.html" class="view-more-btn">View More Jobs</a>
             </div>
         </div>
 
