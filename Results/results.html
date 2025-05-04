@@ -1,68 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/CollectionPage">
 
 <head>
-    <!-- Required Meta Tags -->
+    <!-- SEO Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Primary Meta Tags -->
-    <title>Latest Results 2025 | MySarkariResult</title>
-    <meta name="description" content="Check latest exam results 2025 - CBSE, CISCE, State Boards, University Results and Competitive Exams. Access your marksheets and scorecards online.">
+    <title>Latest Results 2025: Exam/Recruitment Outcomes | MySarkariResult</title>
+    <meta name="description" 
+          content="Updated list of government exam results 2025 with direct links. Check SSC, UPSC, State PSC, Railway, and Bank results instantly.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Latest Exam Results 2025 | MySarkariResult">
-    <meta property="og:description" content="Check latest board results, university exams and competitive exam scores. Download official marksheets and verify scores.">
+    <meta property="og:url" content="https://mysarkariresult.in/results.html">
+    <meta property="og:title" content="Latest Government Exam Results 2025 | MySarkariResult">
+    <meta property="og:description" 
+          content="Instant access to latest SSC, UPSC, State PSC, Railway, and Bank exam results 2025 with direct download links.">
     <meta property="og:image" content="https://mysarkariresult.in/assets/images/logo.png">
-    <meta property="og:url" content="https://www.mysarkariresult.in/Results/results.html">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Latest Results 2025 - MySarkariResult">
-    <meta property="twitter:description" content="Access CBSE, CISCE, State Board and Competitive Exam results online. View and download official scorecards.">
+    <meta property="twitter:url" content="https://mysarkariresult.in/results.html">
+    <meta property="twitter:title" content="Latest Government Exam Results 2025 | MySarkariResult">
+    <meta property="twitter:description" 
+          content="Updated list of 1000+ government exam results with direct outcome links and merit lists.">
     <meta property="twitter:image" content="https://mysarkariresult.in/assets/images/logo.png">
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                    "@type": "Article",
-                    "name": "CISCE ICSE & ISC Result 2025",
-                    "url": "https://www.mysarkariresult.in/Results/cisce-icse-isc-result-2025.html"
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                    "@type": "Article",
-                    "name": "CBSE Class 10 & 12 Result 2025",
-                    "url": "https://www.mysarkariresult.in/Results/cbse-result-2025.html"
-                }
-            }
-        ]
-    }
-    </script>
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mysarkariresult.in/results.html">
 
+    <!-- Google News/Article Tags -->
+    <meta name="news_keywords" content="government results, ssc result, upsc result, merit list">
+    <meta name="standout" content="https://mysarkariresult.in/results.html">
+
+    <!-- Styles -->
     <style>
         :root {
             --primary: #ab183d;
             --secondary: #2d3748;
-            --accent: #e63946;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gap: 1.5rem;
-            --radius: 0.75rem;
-            --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --font-main: 'Inter', sans-serif;
         }
 
         * {
@@ -72,158 +49,384 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: var(--font-main);
             line-height: 1.6;
-            color: var(--dark);
-            background: var(--light);
+            color: var(--secondary);
+            background: var(--bg-light);
         }
 
         .content-container {
-            max-width: 90rem;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
+            max-width: 75rem;
+            width: 95%;
+            margin: 0 auto 2.5rem;
+            padding: 1.25rem 0.9375rem;
         }
 
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-            gap: var(--gap);
-            margin: 2rem 0;
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 0.8rem 0;
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.8125rem, 2vw, 0.9375rem);
         }
 
-        .result-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .result-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0.25rem;
-            height: 100%;
-            background: var(--primary);
-        }
-
-        .result-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
-        }
-
-        .result-title {
+        .breadcrumb a {
             color: var(--primary);
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .result-link {
             text-decoration: none;
-            color: inherit;
-            display: block;
         }
 
-        .result-meta {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            font-size: 0.875rem;
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
             color: var(--secondary);
+            margin: 0 0.3125rem;
         }
 
-        .result-badge {
-            background: var(--light);
-            padding: 0.25rem 0.75rem;
-            border-radius: 2rem;
+        /* Section Styles */
+        .section-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 0.125rem solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            font-size: 1.4rem;
+        }
+
+        /* Content List */
+        .content-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            background: var(--bg-light);
+            transition: all 0.3s ease;
+            border-left: 0.25rem solid transparent;
+        }
+
+        .content-item:hover {
+            transform: translateX(0.5rem);
+            border-left-color: var(--primary);
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        }
+
+        .content-item a {
+            color: var(--secondary);
+            text-decoration: none;
+            display: block;
             font-weight: 500;
         }
 
-        @keyframes cardEntrance {
-            from {
-                opacity: 0;
-                transform: translateY(1rem);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .content-item a:hover {
+            color: var(--primary);
         }
 
-        .result-card {
-            animation: cardEntrance 0.6s ease forwards;
-            opacity: 0;
+        /* Info Content */
+        .info-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
         }
 
-        .result-card:nth-child(1) { animation-delay: 0.1s; }
-        .result-card:nth-child(2) { animation-delay: 0.2s; }
-        .result-card:nth-child(3) { animation-delay: 0.3s; }
+        .info-content h2 {
+            color: var(--primary);
+            font-size: clamp(1.3rem, 4vw, 1.6rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
 
-        @media (max-width: 48rem) {
+        .info-content h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3.75rem;
+            height: 0.1875rem;
+            background: var(--primary);
+        }
+
+        /* Result Categories */
+        .result-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+            border-left: 0.25rem solid var(--primary);
+        }
+
+        .category-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .content-container {
-                padding: 1.5rem 1rem;
+                width: 100%;
+                padding: 1rem;
+                margin-bottom: 2rem;
             }
-            
-            .result-title {
-                font-size: 1.125rem;
+
+            .section-card {
+                padding: 1.25rem;
+            }
+
+            .result-categories {
+                grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 0.75rem;
+            }
+
+            .section-card {
+                padding: 1rem;
+            }
+
+            .result-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .info-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .content-container {
+                padding: 0.5rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
             }
         }
     </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Header -->
     <div id="header-container"></div>
 
     <main class="content-container">
-        <h1 class="page-title">Latest Exam Results 2025</h1>
-        
-        <div class="results-grid">
-            <!-- CISCE Result Card -->
-            <article class="result-card">
-                <a href="/Results/cisce-icse-isc-result-2025.html" class="result-link" rel="noopener">
-                    <h2 class="result-title">CISCE ICSE 10th & ISC 12th Result 2025</h2>
-                    <div class="result-meta">
-                        <span class="result-badge">Board Results</span>
-                        <span class="result-badge">Class 10/12</span>
-                    </div>
-                </a>
-            </article>
-
-            <!-- CBSE Result Card -->
-            <article class="result-card">
-                <a href="/Results/cbse-result-2025.html" class="result-link" rel="noopener">
-                    <h2 class="result-title">CBSE Class 10 & 12 Result 2025</h2>
-                    <div class="result-meta">
-                        <span class="result-badge">Board Results</span>
-                        <span class="result-badge">Class 10/12</span>
-                    </div>
-                </a>
-            </article>
-
-            <!-- Add more result cards following the same structure -->
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="https://mysarkariresult.in/">Home</a> <span>»</span>
+            <a href="../Results/results.html">Results</a> <span>»</span>
+            <span>Latest Results 2025</span>
         </div>
+
+        <!-- Results List -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-poll-h"></i> Recently Declared Results</h2>
+            <ul class="content-list" id="results-container"></ul>
+            <div id="loading" class="content-item">Loading results...</div>
+        </div>
+
+        <!-- Result Categories -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-list-alt"></i> Result Categories</h2>
+            <div class="result-categories">
+                <div class="category-card">
+                    <h3>State-Level Results</h3>
+                    <p>State PSC, Police, and District exam outcomes</p>
+                </div>
+                <div class="category-card">
+                    <h3>Central Government</h3>
+                    <p>UPSC, SSC, Railway, and Defense results</p>
+                </div>
+                <div class="category-card">
+                    <h3>Banking Sector</h3>
+                    <p>IBPS, SBI, and RBI exam merit lists</p>
+                </div>
+                <div class="category-card">
+                    <h3>Admission Results</h3>
+                    <p>University and College entrance outcomes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informative Content -->
+        <article class="info-content">
+            <h2>How to Check Your Results</h2>
+            <p>Follow these steps to access your exam results:</p>
+            <ol>
+                <li>Find your exam in the list below</li>
+                <li>Click the result link</li>
+                <li>Enter your roll number/DOB</li>
+                <li>Download/print your scorecard</li>
+            </ol>
+            <br>
+            <h3>Essential Documents</h3>
+            <div class="result-categories">
+                <div class="category-card">
+                    <h3><i class="fas fa-id-card"></i> Required Info</h3>
+                    <p>Roll Number, DOB, Registration ID</p>
+                </div>
+                <div class="category-card">
+                    <h3><i class="fas fa-download"></i> Post-Result Steps</h3>
+                    <p>Download scorecard, Check cutoff marks</p>
+                </div>
+            </div>
+        </article>
     </main>
 
+    <!-- Footer -->
     <div id="footer-container"></div>
 
+    <!-- Scripts -->
     <script>
-        // Load Header and Footer
-        document.addEventListener('DOMContentLoaded', function() {
-            const loadComponent = (id, file) => {
-                fetch(file)
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById(id).innerHTML = html;
-                    });
+        // Component Loader
+        const loadComponent = async (componentName) => {
+            try {
+                const response = await fetch(`../components/${componentName}.html`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                document.getElementById(`${componentName}-container`).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${componentName}:`, error);
+                document.getElementById(`${componentName}-container`).innerHTML = `
+                    <div class="error" style="padding:1rem;background:#ffecec;color:#d32f2f;">
+                        Component load failed. <button onclick="window.location.reload()" 
+                        style="padding:0.25rem 0.5rem;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;">
+                        Refresh</button>
+                    </div>
+                `;
+            }
+        };
+
+        // Results Loader with News Integration
+        const loadResults = async () => {
+            const container = document.getElementById('results-container');
+            const loading = document.getElementById('loading');
+            
+            try {
+                const response = await fetch('../assets/data/results.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const results = await response.json();
+
+                loading.style.display = 'none';
+                
+                if (results.length === 0) {
+                    container.innerHTML = `<li class="content-item">No results available currently</li>`;
+                    return;
+                }
+
+                container.innerHTML = results.map(result => `
+                    <li class="content-item">
+                        <a href="${result.link}" aria-label="${result.title}">
+                            ${result.title}
+                        </a>
+                    </li>
+                `).join('');
+
+                // Update News Schema
+                updateNewsSchema(results);
+
+            } catch (error) {
+                console.error('Results load error:', error);
+                loading.innerHTML = `
+                    <div class="content-item" style="color:#d32f2f;">
+                        <p>Failed to load results. Please try again later.</p>
+                        <button onclick="loadResults()" 
+                            style="margin-top:0.5rem;padding:0.25rem 0.75rem;
+                            background:var(--primary);color:white;border:none;border-radius:4px;">
+                            Retry
+                        </button>
+                    </div>
+                `;
+            }
+        };
+
+        // Google News Schema Generator
+        function updateNewsSchema(results) {
+            const latestResults = results.slice(0, 5);
+            const newsSchema = {
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                "headline": "Latest Government Exam Results - " + new Date().toLocaleDateString(),
+                "datePublished": new Date().toISOString(),
+                "dateModified": new Date().toISOString(),
+                "author": {
+                    "@type": "Organization",
+                    "name": "MySarkariResult",
+                    "url": "https://mysarkariresult.in"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "MySarkariResult",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://mysarkariresult.in/assets/images/logo.png"
+                    }
+                },
+                "description": "Latest exam results including " + latestResults.map(r => r.title).join(', '),
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://mysarkariresult.in/results.html"
+                }
             };
 
-            loadComponent('header-container', '/components/header.html');
-            loadComponent('footer-container', '/components/footer.html');
+            // Remove old schema
+            const oldSchema = document.querySelector('script[data-result-schema]');
+            if (oldSchema) oldSchema.remove();
+
+            // Add new schema
+            const script = document.createElement('script');
+            script.type = "application/ld+json";
+            script.setAttribute('data-result-schema', 'true');
+            script.text = JSON.stringify(newsSchema);
+            document.head.appendChild(script);
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            Promise.all([
+                loadComponent('header'),
+                loadComponent('footer'),
+                loadResults()
+            ]).catch(error => {
+                console.error('Initialization error:', error);
+            });
         });
     </script>
 </body>
