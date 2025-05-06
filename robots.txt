@@ -1,40 +1,12 @@
 User-agent: *
-Allow: /
 Disallow: /admin/
 Disallow: /components/
 Disallow: /data/
 Disallow: /includes/
 Disallow: /config/
 Disallow: /*.php$
-Disallow: /*.js$
-Disallow: /*.css$
+Disallow: /private/
 
 Sitemap: https://mysarkariresult.in/sitemap.xml
 Sitemap: https://mysarkariresult.in/sitemap-jobs.xml
 Sitemap: https://mysarkariresult.in/sitemap-results.xml
-
-# Crawl-delay: 10 (uncomment if needed)
-
-User-agent: Googlebot
-Allow: /$
-Allow: /[a-z0-9-]+/$  # All public pages
-Disallow: /components/
-Disallow: /private/
-
-User-agent: Googlebot-News
-Disallow: /components/
-
-User-agent: Googlebot-Image
-Allow: /.+\.(jpg|png|webp)$
-Disallow: /images/private/
-Disallow: /components/
-
-User-agent: Bingbot
-Allow: /$
-Allow: /[a-z0-9-]+/$
-Disallow: /components/
-
-User-agent: Yandex
-Allow: /$
-Allow: /[a-z0-9-]+/$
-Disallow: /components/
