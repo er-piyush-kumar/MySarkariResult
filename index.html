@@ -75,39 +75,47 @@
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-TL3MCSFC');</script>
 
     <script>
-        // script.js - Final Optimized Version
-
+        // script.js - Final Optimized Version with Mobile Menu Fixes
+    
         // Initialize Mobile Menu (for header)
         function initMobileMenu() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('nav');
-
+            const menuToggle = document.querySelector('.msr-mobile-toggle');
+            const nav = document.querySelector('.msr-main-nav');
+    
             if (menuToggle && nav) {
                 menuToggle.addEventListener('click', () => {
+                    // Toggle menu and button states
                     nav.classList.toggle('active');
                     menuToggle.classList.toggle('active');
-
-                    // Toggle between hamburger and close icon
-                    const icon = menuToggle.querySelector('i');
-                    if (nav.classList.contains('active')) {
-                        icon.classList.replace('fa-bars', 'fa-times');
-                    } else {
-                        icon.classList.replace('fa-times', 'fa-bars');
+                    
+                    // Toggle body scroll when menu is open
+                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+                    
+                    // Close menu when clicking on links (mobile only)
+                    if (window.innerWidth <= 768) {
+                        const navLinks = document.querySelectorAll('.msr-main-nav a');
+                        navLinks.forEach(link => {
+                            link.addEventListener('click', () => {
+                                nav.classList.remove('active');
+                                menuToggle.classList.remove('active');
+                                document.body.style.overflow = '';
+                            });
+                        });
                     }
                 });
             }
         }
-
-        // Load Component Function
+    
+        // Enhanced Load Component Function
         const loadComponent = async (componentName) => {
             try {
-                // Try both possible paths (for local and production)
+                // Try multiple possible paths (for different environments)
                 const paths = [
                     `components/${componentName}.html`,
                     `/components/${componentName}.html`,
                     `../components/${componentName}.html`
                 ];
-
+    
                 let response;
                 for (const path of paths) {
                     try {
@@ -117,43 +125,52 @@
                         console.log(`Tried ${path} - failed`);
                     }
                 }
-
+    
                 if (!response || !response.ok) {
                     throw new Error(`All paths failed for ${componentName}`);
                 }
-
+    
                 const html = await response.text();
-                document.getElementById(`${componentName}-container`).innerHTML = html;
-
-                // Initialize header-specific scripts
-                if (componentName === 'header') {
-                    initMobileMenu();
+                const container = document.getElementById(`${componentName}-container`);
+                
+                if (container) {
+                    container.innerHTML = html;
+    
+                    // Initialize header-specific scripts
+                    if (componentName === 'header') {
+                        initMobileMenu();
+                    }
                 }
-
+    
             } catch (error) {
                 console.error(`Error loading ${componentName}:`, error);
-                document.getElementById(`${componentName}-container`).innerHTML = `
-            <div class="component-error">
-                ${componentName} content failed to load. 
-                <button onclick="window.location.reload()">Refresh Page</button>
-            </div>
-        `;
+                const container = document.getElementById(`${componentName}-container`);
+                if (container) {
+                    container.innerHTML = `
+                        <div class="component-error" style="padding:1rem;background:#ffecec;color:#d32f2f;">
+                            ${componentName} content failed to load. 
+                            <button onclick="window.location.reload()" style="padding:0.25rem 0.5rem;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;">
+                                Refresh Page
+                            </button>
+                        </div>
+                    `;
+                }
             }
         };
-
-        // Populate Dynamic Content Sections with limited items
+    
+        // Populate Dynamic Content Sections
         const populateSection = (containerId, items, maxItems = 15) => {
             const container = document.getElementById(containerId);
-            if (!container) return;
-
+            if (!container || !items) return;
+    
             // Determine max items based on section
             let sectionMax = maxItems;
             if (containerId === 'results-list' || containerId === 'admit-card-list' || containerId === 'jobs-list') {
                 sectionMax = 20;
             }
-
+    
             const limitedItems = items.slice(0, sectionMax);
-
+    
             container.innerHTML = limitedItems.map(item => `
                 <li class="content-item">
                     <a href="${item.link}" aria-label="${item.title}">
@@ -162,7 +179,36 @@
                 </li>
             `).join('');
         };
-
+    
+        // Load JSON Data with Caching
+        const loadData = async (url, cacheKey, cacheDuration = 3600000) => {
+            try {
+                // Try to get from cache first
+                const cachedData = sessionStorage.getItem(cacheKey);
+                if (cachedData) {
+                    return JSON.parse(cachedData);
+                }
+    
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`${url} failed`);
+                
+                const data = await response.json();
+                
+                // Cache the data
+                sessionStorage.setItem(cacheKey, JSON.stringify(data));
+                
+                // Set cache expiration
+                setTimeout(() => {
+                    sessionStorage.removeItem(cacheKey);
+                }, cacheDuration);
+                
+                return data;
+            } catch (error) {
+                console.error(`Error loading ${url}:`, error);
+                return null;
+            }
+        };
+    
         // Load All Content
         const loadAllContent = async () => {
             // 1. First load header and footer
@@ -170,50 +216,60 @@
                 loadComponent('header'),
                 loadComponent('footer')
             ]);
-
+    
             // 2. Then load dynamic content
             try {
                 const sections = {
-                    'results-list': 'data/results.json',
-                    'admit-card-list': 'data/admit-cards.json',
-                    'jobs-list': './assets/data/jobs.json',
-                    'answer-key-list': 'data/answer-keys.json',
-                    'syllabus-list': 'data/syllabus.json',
-                    'admission-list': 'data/admissions.json'
+                    'results-list': { url: './assets/data/results.json', cacheKey: 'resultsData' },
+                    'admit-card-list': { url: './assets/data/admit-cards.json', cacheKey: 'admitCardsData' },
+                    'jobs-list': { url: './assets/data/jobs.json', cacheKey: 'jobsData' },
+                    'answer-key-list': { url: './assets/data/answer-keys.json', cacheKey: 'answerKeysData' },
+                    'syllabus-list': { url: './assets/data/syllabus.json', cacheKey: 'syllabusData' },
+                    'admission-list': { url: './assets/data/admissions.json', cacheKey: 'admissionsData' }
                 };
-
-                const requests = Object.entries(sections).map(async ([id, url]) => {
+    
+                const requests = Object.entries(sections).map(async ([id, config]) => {
                     try {
-                        const response = await fetch(url);
-                        if (!response.ok) throw new Error(`${url} failed`);
-                        const data = await response.json();
-                        populateSection(id, data);
+                        const data = await loadData(config.url, config.cacheKey);
+                        if (data) {
+                            populateSection(id, data);
+                        } else {
+                            throw new Error(`No data loaded for ${id}`);
+                        }
                     } catch (error) {
-                        console.error(`Error loading ${url}:`, error);
-                        document.getElementById(id).innerHTML = `
-                            <li class="error-item">
-                                Content unavailable. Check back later.
-                            </li>
-                        `;
+                        console.error(`Error loading ${id}:`, error);
+                        const container = document.getElementById(id);
+                        if (container) {
+                            container.innerHTML = `
+                                <li class="error-item" style="color:#d32f2f;">
+                                    Content unavailable. Check back later.
+                                    <button onclick="loadAllContent()" style="margin-top:0.5rem;padding:0.25rem 0.75rem;background:var(--primary);color:white;border:none;border-radius:4px;">
+                                        Retry
+                                    </button>
+                                </li>
+                            `;
+                        }
                     }
                 });
-
+    
                 await Promise.all(requests);
-
+    
             } catch (error) {
                 console.error('Content loading error:', error);
             }
         };
-
+    
         // Initialize Everything
-        document.addEventListener('DOMContentLoaded', loadAllContent);
-
-        // Back to Top Button (for footer)
-        window.addEventListener('scroll', () => {
-            const backToTop = document.getElementById('backToTop');
-            if (backToTop) {
-                backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllContent();
+            
+            // Back to Top Button (for footer)
+            window.addEventListener('scroll', () => {
+                const backToTop = document.getElementById('backToTop');
+                if (backToTop) {
+                    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+                }
+            });
         });
     </script>
 
@@ -404,7 +460,6 @@
 <body>
     <!-- Header -->
     <div id="header-container"></div>
-    <br>
     <main class="content-container">
         <!-- First Row -->
         <div class="grid-section">
