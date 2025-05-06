@@ -11,7 +11,7 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mysarkariresult.in/results.html">
+    <meta property="og:url" content="https://mysarkariresult.in/Results/results.html">
     <meta property="og:title" content="Latest Government Exam Results 2025 | MySarkariResult">
     <meta property="og:description" 
           content="Instant access to latest SSC, UPSC, State PSC, Railway, and Bank exam results 2025 with direct download links.">
@@ -19,14 +19,14 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mysarkariresult.in/results.html">
+    <meta property="twitter:url" content="https://mysarkariresult.in/Results/results.html">
     <meta property="twitter:title" content="Latest Government Exam Results 2025 | MySarkariResult">
     <meta property="twitter:description" 
           content="Updated list of 1000+ government exam results with direct outcome links and merit lists.">
     <meta property="twitter:image" content="https://mysarkariresult.in/assets/images/logo.png">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://mysarkariresult.in/results.html">
+    <link rel="canonical" href="https://mysarkariresult.in/Results/results.html">
 
     <!-- Google News/Article Tags -->
     <meta name="news_keywords" content="government results, ssc result, upsc result, merit list">
@@ -315,20 +315,49 @@
 
     <!-- Scripts -->
     <script>
-        // Component Loader
+        // Component Loader with Error Handling
         const loadComponent = async (componentName) => {
             try {
                 const response = await fetch(`../components/${componentName}.html`);
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const html = await response.text();
                 document.getElementById(`${componentName}-container`).innerHTML = html;
+                
+                // Initialize mobile menu if header is loaded
+                if (componentName === 'header') {
+                    const menuToggle = document.querySelector('.msr-mobile-toggle');
+                    const nav = document.querySelector('.msr-main-nav');
+                    if (menuToggle && nav) {
+                        menuToggle.addEventListener('click', () => {
+                            menuToggle.classList.toggle('active');
+                            nav.classList.toggle('active');
+                            
+                            // Toggle body overflow when menu is open
+                            if (nav.classList.contains('active')) {
+                                document.body.style.overflow = 'hidden';
+                            } else {
+                                document.body.style.overflow = '';
+                            }
+                        });
+    
+                        // Close menu when clicking on links (mobile only)
+                        if (window.innerWidth <= 768) {
+                            const navLinks = document.querySelectorAll('.msr-main-nav a');
+                            navLinks.forEach(link => {
+                                link.addEventListener('click', () => {
+                                    menuToggle.classList.remove('active');
+                                    nav.classList.remove('active');
+                                    document.body.style.overflow = '';
+                                });
+                            });
+                        }
+                    }
+                }
             } catch (error) {
                 console.error(`Error loading ${componentName}:`, error);
                 document.getElementById(`${componentName}-container`).innerHTML = `
                     <div class="error" style="padding:1rem;background:#ffecec;color:#d32f2f;">
-                        Component load failed. <button onclick="window.location.reload()" 
-                        style="padding:0.25rem 0.5rem;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;">
-                        Refresh</button>
+                        Error loading component. <button onclick="window.location.reload()" style="padding:0.25rem 0.5rem;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;">Refresh</button>
                     </div>
                 `;
             }

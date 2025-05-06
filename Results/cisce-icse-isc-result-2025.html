@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required Meta Tags -->
     <meta charset="UTF-8">
@@ -12,13 +13,15 @@
 
     <!-- Primary Meta Tags -->
     <title>CISCE Result 2025: ICSE 10th & ISC 12th Marks Online | MySarkariResult</title>
-    <meta name="description" content="Check CISCE ICSE Class 10 & ISC Class 12 Result 2025 online. Download marksheet, view subject-wise scores, and get passing details.">
+    <meta name="description"
+        content="Check CISCE ICSE Class 10 & ISC Class 12 Result 2025 online. Download marksheet, view subject-wise scores, and get passing details.">
     <meta name="keywords" content="CISCE Result 2025, ICSE 10th Result, ISC 12th Result, CISCE Marksheet">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="CISCE ICSE 10th & ISC 12th Result 2025 Declared">
-    <meta property="og:description" content="Official CISCE Board Results 2025 for Class 10 and 12. Check marks online and download scorecard.">
+    <meta property="og:description"
+        content="Official CISCE Board Results 2025 for Class 10 and 12. Check marks online and download scorecard.">
     <meta property="og:image" content="https://mysarkariresult.in/assets/images/logo.png">
     <meta property="og:url" content="https://www.mysarkariresult.in/Results/cisce-icse-isc-result-2025.html">
     <meta property="og:site_name" content="MySarkariResult">
@@ -26,7 +29,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="CISCE Result 2025 - Check ICSE/ISC Marks Online">
-    <meta property="twitter:description" content="Get CISCE Class 10 & 12 Results 2025. View subject-wise scores and download official marksheet.">
+    <meta property="twitter:description"
+        content="Get CISCE Class 10 & 12 Results 2025. View subject-wise scores and download official marksheet.">
     <meta property="twitter:image" content="https://mysarkariresult.in/assets/images/logo.png">
 
     <!-- Favicon -->
@@ -76,8 +80,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(1rem); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(1rem);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         * {
@@ -106,22 +117,38 @@
             font-size: 0.875rem;
             color: var(--gray);
         }
+
         .breadcrumb a {
             color: var(--primary);
             text-decoration: none;
             transition: var(--transition);
         }
-        .breadcrumb a:hover { text-decoration: underline; }
-        .breadcrumb span { margin: 0 0.3125rem; }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.3125rem;
+        }
 
         /* Animations */
         .animate {
             animation: fadeIn 0.6s ease forwards;
             opacity: 0;
         }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
 
         /* Post Header */
         .post-header {
@@ -133,6 +160,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .post-header::before {
             content: "";
             position: absolute;
@@ -143,6 +171,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
         }
+
         .post-header h1 {
             font-size: 1.75rem;
             line-height: 1.3;
@@ -158,6 +187,7 @@
             margin: 1.5rem 0;
             box-shadow: var(--box-shadow);
         }
+
         .content-section h2 {
             color: var(--primary);
             margin-bottom: 1.5rem;
@@ -165,11 +195,13 @@
             border-bottom: 0.125rem solid var(--primary);
             padding-bottom: 0.75rem;
         }
+
         .content-section h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.25rem;
         }
+
         .content-section p {
             margin-bottom: 1rem;
             line-height: 1.7;
@@ -182,12 +214,14 @@
             gap: 1.5rem;
             margin: 2rem 0;
         }
+
         .info-card {
             padding: 1.5rem;
             border-radius: var(--border-radius);
             border: 1px solid #eee;
             background: white;
         }
+
         .info-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
@@ -203,6 +237,7 @@
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
+
         .timeline-card {
             padding: 1.5rem;
             border-radius: var(--border-radius);
@@ -210,6 +245,7 @@
             box-shadow: var(--box-shadow);
             background: white;
         }
+
         .timeline-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
@@ -217,7 +253,7 @@
         }
 
         /* Updated List Styling with Classes */
-        .info-card ul, 
+        .info-card ul,
         .info-card ol {
             padding-left: 1.25rem;
             margin: 1rem 0;
@@ -235,6 +271,7 @@
             gap: 0.75rem;
             margin: 1rem 0;
         }
+
         .btn {
             padding: 0.75rem 1.5rem;
             border-radius: var(--border-radius);
@@ -246,29 +283,35 @@
             font-weight: 500;
             font-size: 0.875rem;
         }
+
         .btn-primary {
             background: var(--primary);
             color: white;
             border: 1px solid var(--primary);
         }
+
         .btn-secondary {
             background: var(--secondary);
             color: white;
             border: 1px solid var(--secondary);
         }
+
         .btn-outline {
             background: transparent;
             color: var(--primary);
             border: 1px solid var(--primary);
         }
+
         .btn:hover {
             transform: translateY(-0.125rem);
             box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
         }
+
         .btn-primary:hover {
             background: var(--primary-light);
             border-color: var(--primary-light);
         }
+
         .btn-outline:hover {
             background: var(--primary);
             color: white;
@@ -282,6 +325,7 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
         }
+
         .faq-section h2 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
@@ -289,16 +333,19 @@
             border-bottom: 0.125rem solid var(--primary);
             padding-bottom: 0.75rem;
         }
+
         .faq-section details {
             margin: 1rem 0;
             border: 1px solid #eee;
             border-radius: var(--border-radius);
             transition: var(--transition);
         }
+
         .faq-section details[open] {
             border-color: var(--primary);
             box-shadow: 0 0.25rem 1rem rgba(171, 24, 61, 0.1);
         }
+
         .faq-section summary {
             cursor: pointer;
             padding: 1rem;
@@ -307,7 +354,11 @@
             position: relative;
             list-style: none;
         }
-        .faq-section summary::-webkit-details-marker { display: none; }
+
+        .faq-section summary::-webkit-details-marker {
+            display: none;
+        }
+
         .faq-section summary::after {
             content: "+";
             position: absolute;
@@ -315,10 +366,15 @@
             font-size: 1.25rem;
             transition: var(--transition);
         }
-        .faq-section details[open] summary::after { content: "-"; }
+
+        .faq-section details[open] summary::after {
+            content: "-";
+        }
+
         .faq-section summary:hover {
             background: #f9f9f9;
         }
+
         .faq-section p {
             padding: 0 1rem 1rem;
             color: var(--secondary);
@@ -333,6 +389,7 @@
             margin: 1.5rem 0;
             border-left: 0.375rem solid var(--primary);
         }
+
         .benefit-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
@@ -340,251 +397,319 @@
 
         /* Responsive Design */
         @media (max-width: 64rem) {
-            .content-container { padding: 1rem; }
-            .post-header { padding: 1.5rem; }
-            .post-header h1 { font-size: 1.5rem; }
-            .content-section { padding: 1.5rem; }
-            .faq-section { padding: 1.5rem; }
+            .content-container {
+                padding: 1rem;
+            }
+
+            .post-header {
+                padding: 1.5rem;
+            }
+
+            .post-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .faq-section {
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 48rem) {
-            .post-header h1 { font-size: 1.25rem; }
-            .content-section h2 { font-size: 1.25rem; }
-            .timeline-grid, .info-grid { grid-template-columns: 1fr; }
+            .post-header h1 {
+                font-size: 1.25rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.25rem;
+            }
+
+            .timeline-grid,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-<div id="header-container"></div>
+    <div id="header-container"></div>
 
-<main class="content-container">
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <a href="https://mysarkariresult.in/">Home</a>
-        <span>»</span>
-        <a href="https://mysarkariresult.in/Results/results.html">Results</a>
-        <span>»</span>
-        <span>CISCE Results 2025</span>
-    </div>
-
-    <!-- Animated Post Header -->
-    <div class="post-header animate">
-        <h1>CISCE ICSE 10th & ISC 12th Result 2025</h1>
-    </div>
-
-    <!-- Short Information Section -->
-    <div class="content-section animate delay-1">
-        <h2>Important Information</h2>
-        <p>The Council for the Indian School Certificate Examination (CISCE) has officially released the ICSE Class 10th and ISC Class 12th examination results for 2025. Over 2.5 lakh students across India can now check their subject-wise scores online. The board examinations were conducted between February and April 2025, with results being declared within 45 days of exam completion.</p>
-
-        <div class="benefit-card">
-            <h3>How This Page Helps Students</h3>
-            <p>This page provides a one-stop solution for all CISCE result-related information. We offer direct links to check results, download marksheets, and understand your performance. Our comprehensive guide helps you navigate through the result checking process smoothly, saving you time and confusion. The detailed FAQs address common concerns, while the benefit section explains how to make the most of your results for future academic and career planning.</p>
-        </div>
-    </div>
-
-    <!-- Quick Info Grid -->
-    <div class="info-grid">
-        <div class="info-card">
-            <h3>Important Dates</h3>
-            <ul>
-                <li>ISC XII Exam: 13 Feb - 5 Apr 2025</li>
-                <li>ICSE X Exam: 18 Feb - 27 Mar 2025</li>
-                <li>Result Date: 30 Apr 2025 (11 AM)</li>
-                <li>Revaluation Application: 1-10 May 2025</li>
-                <li>Compartment Exam: June 2025</li>
-            </ul>
+    <main class="content-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="https://mysarkariresult.in/">Home</a>
+            <span>»</span>
+            <a href="https://mysarkariresult.in/Results/results.html">Results</a>
+            <span>»</span>
+            <span>CISCE Results 2025</span>
         </div>
 
-        <div class="info-card">
-            <h3>Key Information</h3>
-            <ul>
-                <li>Conducting Body: CISCE Board</li>
-                <li>Result Status: Declared</li>
-                <li>Marks Available: Online & SMS</li>
-                <li>Passing Marks: 35% in each subject</li>
-                <li>Total Students: 2.5 lakh+</li>
-            </ul>
+        <!-- Animated Post Header -->
+        <div class="post-header animate">
+            <h1>CISCE ICSE 10th & ISC 12th Result 2025</h1>
         </div>
-    </div>
 
-    <!-- Class 10th Result Section -->
-    <div class="content-section animate delay-2">
-        <h2>For ICSE Class 10th Students</h2>
-        <div class="timeline-grid">
-            <div class="timeline-card">
-                <h3>How to Check Result</h3>
-                <ol>
-                    <li>Visit CISCE official website</li>
-                    <li>Click on "ICSE Result 2025" link</li>
-                    <li>Enter your Unique ID</li>
-                    <li>Submit to view marksheet</li>
-                    <li>Download/Print for future reference</li>
-                </ol>
+        <!-- Short Information Section -->
+        <div class="content-section animate delay-1">
+            <h2>Important Information</h2>
+            <p>The Council for the Indian School Certificate Examination (CISCE) has officially released the ICSE Class
+                10th and ISC Class 12th examination results for 2025. Over 2.5 lakh students across India can now check
+                their subject-wise scores online. The board examinations were conducted between February and April 2025,
+                with results being declared within 45 days of exam completion.</p>
+
+            <div class="benefit-card">
+                <h3>How This Page Helps Students</h3>
+                <p>This page provides a one-stop solution for all CISCE result-related information. We offer direct
+                    links to check results, download marksheets, and understand your performance. Our comprehensive
+                    guide helps you navigate through the result checking process smoothly, saving you time and
+                    confusion. The detailed FAQs address common concerns, while the benefit section explains how to make
+                    the most of your results for future academic and career planning.</p>
+            </div>
+        </div>
+
+        <!-- Quick Info Grid -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Important Dates</h3>
+                <ul>
+                    <li>ISC XII Exam: 13 Feb - 5 Apr 2025</li>
+                    <li>ICSE X Exam: 18 Feb - 27 Mar 2025</li>
+                    <li>Result Date: 30 Apr 2025 (11 AM)</li>
+                    <li>Revaluation Application: 1-10 May 2025</li>
+                    <li>Compartment Exam: June 2025</li>
+                </ul>
             </div>
 
-            <div class="timeline-card">
-                <h3>Download Links</h3>
-                <div class="server-links">
-                    <a href="https://cisce.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Server I</a>
-                    <a href="https://results.cisce.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Server II</a>
+            <div class="info-card">
+                <h3>Key Information</h3>
+                <ul>
+                    <li>Conducting Body: CISCE Board</li>
+                    <li>Result Status: Declared</li>
+                    <li>Marks Available: Online & SMS</li>
+                    <li>Passing Marks: 35% in each subject</li>
+                    <li>Total Students: 2.5 lakh+</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Class 10th Result Section -->
+        <div class="content-section animate delay-2">
+            <h2>For ICSE Class 10th Students</h2>
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <h3>How to Check Result</h3>
+                    <ol>
+                        <li>Visit CISCE official website</li>
+                        <li>Click on "ICSE Result 2025" link</li>
+                        <li>Enter your Unique ID</li>
+                        <li>Submit to view marksheet</li>
+                        <li>Download/Print for future reference</li>
+                    </ol>
                 </div>
-                <p>Alternative Method: SMS ICSE &lt;UniqueID&gt; to 09248082883</p>
-            </div>
-        </div>
 
-        <div class="benefit-card">
-            <h3>Maximizing Your ICSE Result Benefits</h3>
-            <p>Your ICSE Class 10 results are crucial for stream selection in Class 11. Use your subject-wise scores to identify strengths and choose subjects accordingly. High scorers can apply for scholarships in prestigious institutions. The marksheet is also important for competitive exam registrations and future academic applications. Keep multiple copies of the original for documentation purposes.</p>
-        </div>
-    </div>
-
-    <!-- Class 12th Result Section -->
-    <div class="content-section animate delay-3">
-        <h2>For ISC Class 12th Students</h2>
-        <div class="timeline-grid">
-            <div class="timeline-card">
-                <h3>How to Check Result</h3>
-                <ol>
-                    <li>Go to results.cisce.org</li>
-                    <li>Select "ISC Result 2025"</li>
-                    <li>Input your Candidate ID</li>
-                    <li>Enter CAPTCHA code</li>
-                    <li>View/download scorecard</li>
-                </ol>
-            </div>
-
-            <div class="timeline-card">
-                <h3>Download Links</h3>
-                <div class="server-links">
-                    <a href="https://cisce.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Server I</a>
-                    <a href="https://results.cisce.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Server II</a>
-                </div>
-                <p>Alternative Method: SMS ISC &lt;UniqueID&gt; to 09248082883</p>
-            </div>
-        </div>
-
-        <div class="benefit-card">
-            <h3>Utilizing Your ISC Result Effectively</h3>
-            <p>Your ISC Class 12 results are vital for college admissions and career opportunities. Top universities consider these marks for undergraduate programs. Use your percentage to apply for competitive entrance exams like JEE, NEET, CLAT, etc. The marksheet serves as a key document for passport applications, government jobs, and higher education abroad. Consider applying for revaluation if your scores are borderline for your desired course.</p>
-        </div>
-    </div>
-
-    <!-- Additional Resources -->
-    <div class="content-section animate delay-1">
-        <h2>Important Resources</h2>
-        <div class="timeline-grid">
-            <div class="timeline-card">
-                <h3>Time Tables</h3>
-                <div class="server-links">
-                    <a href="https://doc.sarkariresults.org.in/CISCE_10th_2025_ICSE-Timetable-with-Instructions.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                        <i class="fas fa-file-pdf"></i> Class X
-                    </a>
-                    <a href="https://doc.sarkariresults.org.in/CISCE_Class12th_ISC-Timetable-with-Instructions.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                        <i class="fas fa-file-pdf"></i> Class XII
-                    </a>
+                <div class="timeline-card">
+                    <h3>Download Links</h3>
+                    <div class="server-links">
+                        <a href="https://cisce.org/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">Server I</a>
+                        <a href="https://results.cisce.org/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">Server II</a>
+                    </div>
+                    <p>Alternative Method: SMS ICSE &lt;UniqueID&gt; to 09248082883</p>
                 </div>
             </div>
 
-            <div class="timeline-card">
-                <h3>Exam Instructions</h3>
-                <div class="server-links">
-                    <a href="https://cisce.org/wp-content/uploads/2024/11/ICSE-Timetable-with-Instructions.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <i class="fas fa-download"></i> Class X
-                    </a>
-                    <a href="https://cisce.org/wp-content/uploads/2024/11/ISC-Timetable-with-Instructions.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <i class="fas fa-download"></i> Class XII
-                    </a>
+            <div class="benefit-card">
+                <h3>Maximizing Your ICSE Result Benefits</h3>
+                <p>Your ICSE Class 10 results are crucial for stream selection in Class 11. Use your subject-wise scores
+                    to identify strengths and choose subjects accordingly. High scorers can apply for scholarships in
+                    prestigious institutions. The marksheet is also important for competitive exam registrations and
+                    future academic applications. Keep multiple copies of the original for documentation purposes.</p>
+            </div>
+        </div>
+
+        <!-- Class 12th Result Section -->
+        <div class="content-section animate delay-3">
+            <h2>For ISC Class 12th Students</h2>
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <h3>How to Check Result</h3>
+                    <ol>
+                        <li>Go to results.cisce.org</li>
+                        <li>Select "ISC Result 2025"</li>
+                        <li>Input your Candidate ID</li>
+                        <li>Enter CAPTCHA code</li>
+                        <li>View/download scorecard</li>
+                    </ol>
+                </div>
+
+                <div class="timeline-card">
+                    <h3>Download Links</h3>
+                    <div class="server-links">
+                        <a href="https://cisce.org/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">Server I</a>
+                        <a href="https://results.cisce.org/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">Server II</a>
+                    </div>
+                    <p>Alternative Method: SMS ISC &lt;UniqueID&gt; to 09248082883</p>
                 </div>
             </div>
 
-            <div class="timeline-card">
-                <h3>Official Website</h3>
-                <a href="https://cisce.org/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt"></i> Visit CISCE Portal
-                </a>
+            <div class="benefit-card">
+                <h3>Utilizing Your ISC Result Effectively</h3>
+                <p>Your ISC Class 12 results are vital for college admissions and career opportunities. Top universities
+                    consider these marks for undergraduate programs. Use your percentage to apply for competitive
+                    entrance exams like JEE, NEET, CLAT, etc. The marksheet serves as a key document for passport
+                    applications, government jobs, and higher education abroad. Consider applying for revaluation if
+                    your scores are borderline for your desired course.</p>
             </div>
         </div>
-    </div>
 
-    <!-- FAQ Section -->
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
+        <!-- Additional Resources -->
+        <div class="content-section animate delay-1">
+            <h2>Important Resources</h2>
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <h3>Time Tables</h3>
+                    <div class="server-links">
+                        <a href="https://doc.sarkariresults.org.in/CISCE_10th_2025_ICSE-Timetable-with-Instructions.pdf"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i class="fas fa-file-pdf"></i> Class X
+                        </a>
+                        <a href="https://doc.sarkariresults.org.in/CISCE_Class12th_ISC-Timetable-with-Instructions.pdf"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i class="fas fa-file-pdf"></i> Class XII
+                        </a>
+                    </div>
+                </div>
 
-        <details>
-            <summary>1. When was the CISCE ICSE/ISC Result 2025 declared?</summary>
-            <p>The CISCE board declared the ICSE Class 10 and ISC Class 12 results on 30 April 2025 at 11:00 AM.</p>
-        </details>
+                <div class="timeline-card">
+                    <h3>Exam Instructions</h3>
+                    <div class="server-links">
+                        <a href="https://cisce.org/wp-content/uploads/2024/11/ICSE-Timetable-with-Instructions.pdf"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Class X
+                        </a>
+                        <a href="https://cisce.org/wp-content/uploads/2024/11/ISC-Timetable-with-Instructions.pdf"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Class XII
+                        </a>
+                    </div>
+                </div>
 
-        <details>
-            <summary>2. How can I check my CISCE result if I forgot my Unique ID?</summary>
-            <p>Contact your school administration for your Unique ID. Schools have access to all student IDs and can provide this information.</p>
-        </details>
+                <div class="timeline-card">
+                    <h3>Official Website</h3>
+                    <a href="https://cisce.org/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i> Visit CISCE Portal
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <details>
-            <summary>3. What is the passing percentage for CISCE board exams?</summary>
-            <p>Students need to score a minimum of 35% marks in each subject and an overall aggregate of 35% to pass the CISCE examinations.</p>
-        </details>
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
 
-        <details>
-            <summary>4. How can I apply for revaluation of my CISCE marksheet?</summary>
-            <p>You can apply for revaluation through your school from 1-10 May 2025. The application form with fee payment needs to be submitted to the CISCE board.</p>
-        </details>
+            <details>
+                <summary>1. When was the CISCE ICSE/ISC Result 2025 declared?</summary>
+                <p>The CISCE board declared the ICSE Class 10 and ISC Class 12 results on 30 April 2025 at 11:00 AM.</p>
+            </details>
 
-        <details>
-            <summary>5. When will the original marksheet be available?</summary>
-            <p>Original marksheets are usually distributed by schools within 2-3 weeks after the online result declaration. Contact your school for exact dates.</p>
-        </details>
+            <details>
+                <summary>2. How can I check my CISCE result if I forgot my Unique ID?</summary>
+                <p>Contact your school administration for your Unique ID. Schools have access to all student IDs and can
+                    provide this information.</p>
+            </details>
 
-        <details>
-            <summary>6. What should I do if there's an error in my result?</summary>
-            <p>Immediately inform your school principal who will contact the CISCE board for corrections. Keep a printout of the online result for reference.</p>
-        </details>
+            <details>
+                <summary>3. What is the passing percentage for CISCE board exams?</summary>
+                <p>Students need to score a minimum of 35% marks in each subject and an overall aggregate of 35% to pass
+                    the CISCE examinations.</p>
+            </details>
 
-        <details>
-            <summary>7. How can I improve my grades if I failed in one subject?</summary>
-            <p>CISCE offers compartment exams in June 2025 for students who failed in 1-2 subjects. You can appear for these exams to improve your score.</p>
-        </details>
+            <details>
+                <summary>4. How can I apply for revaluation of my CISCE marksheet?</summary>
+                <p>You can apply for revaluation through your school from 1-10 May 2025. The application form with fee
+                    payment needs to be submitted to the CISCE board.</p>
+            </details>
 
-        <details>
-            <summary>8. Is the online marksheet valid for college admissions?</summary>
-            <p>Most colleges accept the online printout for provisional admission, but you'll need to submit the original marksheet when available for final admission.</p>
-        </details>
+            <details>
+                <summary>5. When will the original marksheet be available?</summary>
+                <p>Original marksheets are usually distributed by schools within 2-3 weeks after the online result
+                    declaration. Contact your school for exact dates.</p>
+            </details>
 
-        <details>
-            <summary>9. How to calculate percentage from CISCE grades?</summary>
-            <p>CISCE provides marks out of 100 for each subject. Add marks of all subjects (excluding additional subjects) and divide by total number of subjects.</p>
-        </details>
+            <details>
+                <summary>6. What should I do if there's an error in my result?</summary>
+                <p>Immediately inform your school principal who will contact the CISCE board for corrections. Keep a
+                    printout of the online result for reference.</p>
+            </details>
 
-        <details>
-            <summary>10. What documents do I need to collect my original marksheet?</summary>
-            <p>You'll need to show your school ID card or admit card to collect the original marksheet from your school. Some schools may require a signed acknowledgment.</p>
-        </details>
-    </div>
-</main>
+            <details>
+                <summary>7. How can I improve my grades if I failed in one subject?</summary>
+                <p>CISCE offers compartment exams in June 2025 for students who failed in 1-2 subjects. You can appear
+                    for these exams to improve your score.</p>
+            </details>
 
-<div id="footer-container"></div>
+            <details>
+                <summary>8. Is the online marksheet valid for college admissions?</summary>
+                <p>Most colleges accept the online printout for provisional admission, but you'll need to submit the
+                    original marksheet when available for final admission.</p>
+            </details>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Load Header/Footer
-        ['/components/header.html', '/components/footer.html'].forEach(url => {
-            fetch(url).then(r => r.text()).then(html => {
-                document.getElementById(url.includes('header') ? 'header-container' : 'footer-container').innerHTML = html;
+            <details>
+                <summary>9. How to calculate percentage from CISCE grades?</summary>
+                <p>CISCE provides marks out of 100 for each subject. Add marks of all subjects (excluding additional
+                    subjects) and divide by total number of subjects.</p>
+            </details>
+
+            <details>
+                <summary>10. What documents do I need to collect my original marksheet?</summary>
+                <p>You'll need to show your school ID card or admit card to collect the original marksheet from your
+                    school. Some schools may require a signed acknowledgment.</p>
+            </details>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        // Load Header and Footer
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load Header
+            fetch('/components/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('header-container').innerHTML = html;
+                    // Initialize mobile menu AFTER header loads
+                    if (typeof initializeMobileMenu === 'function') {
+                        initializeMobileMenu();
+                    }
+                });
+
+            // Load Footer
+            fetch('/components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+
+            // FAQ Interactions
+            document.querySelectorAll('.faq-section details').forEach(detail => {
+                detail.addEventListener('toggle', function () {
+                    if (this.open) this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
             });
         });
+    </script>
+    <script src="../components/main.js"></script>
 
-        // FAQ Interactions
-        document.querySelectorAll('.faq-section details').forEach(detail => {
-            detail.addEventListener('toggle', function() {
-                if(this.open) this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            });
-        });
-    });
-</script>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </body>
+
 </html>

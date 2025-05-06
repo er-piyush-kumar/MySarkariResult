@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MySarkariResult</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -39,9 +42,9 @@
             --space-sm: 0.5rem;
             --space-md: 1rem;
             --space-lg: 1.5rem;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
         }
 
         header {
@@ -62,6 +65,7 @@
             margin: 0 auto;
             padding: 0 var(--space-lg);
             gap: var(--space-lg);
+            position: relative;
         }
 
         .site-branding {
@@ -83,7 +87,7 @@
             line-height: 1;
             letter-spacing: -0.05em;
             transition: var(--transition);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -99,15 +103,6 @@
             margin-top: 0.15rem;
             font-weight: 500;
             text-align: center;
-        }
-
-        .site-branding:hover .site-name {
-            transform: translateY(-2px);
-            text-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .site-branding:hover .site-url {
-            opacity: 1;
         }
 
         .msr-main-nav ul {
@@ -154,14 +149,6 @@
             width: 60%;
         }
 
-        .msr-main-nav a i {
-            transition: var(--transition);
-        }
-
-        .msr-main-nav a:hover i {
-            transform: scale(1.1);
-        }
-
         .msr-mobile-toggle {
             background: none;
             border: none;
@@ -177,7 +164,8 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            z-index: 1001;
+            z-index: 1002;
+            /* Higher than menu */
             margin-left: auto;
         }
 
@@ -225,7 +213,7 @@
                 padding: 0 var(--space-md);
                 position: relative;
             }
-            
+
             .site-branding {
                 position: absolute;
                 left: 50%;
@@ -233,10 +221,7 @@
                 width: max-content;
                 padding: 0;
                 margin: 0;
-            }
-
-            .site-name {
-                font-size: clamp(1.25rem, 5vw, 1.5rem);
+                z-index: 1001;
             }
 
             .msr-main-nav {
@@ -254,7 +239,6 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             }
 
             .msr-main-nav.active {
@@ -273,21 +257,14 @@
                 font-size: 1rem;
                 border-radius: 0.5rem;
                 justify-content: center;
-                background: rgba(255,255,255,0.1);
+                background: rgba(255, 255, 255, 0.1);
                 text-align: center;
-            }
-
-            .msr-main-nav a:hover {
-                transform: scale(1.02);
-                background: var(--primary-light);
-            }
-
-            .msr-main-nav a:hover::before {
-                width: 40%;
             }
 
             .msr-mobile-toggle {
                 display: flex;
+                z-index: 1002;
+                /* Stays above menu */
             }
         }
 
@@ -297,16 +274,9 @@
                 display: none;
             }
         }
-
-        /* Tablet Styles */
-        @media (min-width: 48.0625rem) and (max-width: 64rem) {
-            .msr-main-nav a {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.875rem;
-            }
-        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-container">
@@ -319,8 +289,10 @@
             <nav class="msr-main-nav" id="msr-unique-nav">
                 <ul>
                     <li><a href="https://mysarkariresult.in/"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="https://mysarkariresult.in/Jobs/jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
-                    <li><a href="https://mysarkariresult.in/Results/results.html"><i class="fas fa-trophy"></i> Results</a></li>
+                    <li><a href="https://mysarkariresult.in/Jobs/jobs.html"><i class="fas fa-briefcase"></i> Jobs</a>
+                    </li>
+                    <li><a href="https://mysarkariresult.in/Results/results.html"><i class="fas fa-trophy"></i>
+                            Results</a></li>
                     <li><a href="#"><i class="fas fa-id-card"></i> Admit Card</a></li>
                     <li><a href="#"><i class="fas fa-key"></i> Answer Key</a></li>
                     <li><a href="#"><i class="fas fa-book"></i> Syllabus</a></li>
@@ -333,53 +305,7 @@
             </button>
         </div>
     </header>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('msr-unique-toggle');
-            const nav = document.getElementById('msr-unique-nav');
-
-            menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-                document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-            });
-
-            document.querySelectorAll('#msr-unique-nav a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        nav.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            });
-
-            document.addEventListener('mousedown', (e) => {
-                if (e.target.closest('.site-branding, .msr-mobile-toggle')) {
-                    e.target.blur();
-                }
-            });
-
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                if (window.scrollY > 10) {
-                    header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-                    header.style.background = 'var(--primary-dark)';
-                } else {
-                    header.style.boxShadow = 'var(--shadow-md)';
-                    header.style.background = 'var(--primary)';
-                }
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    nav.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        });
-    </script>
+    <script src="../components/main.js"></script>
 </body>
+
 </html>

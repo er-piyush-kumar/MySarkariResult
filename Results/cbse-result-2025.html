@@ -669,14 +669,25 @@
   <div id="footer-container"></div>
 
   <script>
+    // Load Header and Footer
     document.addEventListener('DOMContentLoaded', function () {
-      // Load Header/Footer
-      ['/components/header.html', '/components/footer.html'].forEach(url => {
-        fetch(url).then(r => r.text()).then(html => {
-          document.getElementById(url.includes('header') ? 'header-container' : 'footer-container').innerHTML = html;
+      // Load Header
+      fetch('/components/header.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-container').innerHTML = html;
+          // Initialize mobile menu AFTER header loads
+          if (typeof initializeMobileMenu === 'function') {
+            initializeMobileMenu();
+          }
         });
-      });
 
+      // Load Footer
+      fetch('/components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
       // FAQ Interactions
       document.querySelectorAll('.faq-section details').forEach(detail => {
         detail.addEventListener('toggle', function () {
@@ -685,6 +696,7 @@
       });
     });
   </script>
+  <script src="../components/main.js"></script>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

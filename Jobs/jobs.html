@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest Govt Jobs 2025 | MySarkariResult | Naukri</title>
-    <meta name="description" 
-          content="Daily updated list of 2500+ active government jobs 2025 with direct application links. Find Central/State Govt, PSU, Bank, Railway jobs with eligibility criteria, deadlines and how to apply details.">
+    <meta name="description"
+        content="Daily updated list of 2500+ active government jobs 2025 with direct application links. Find Central/State Govt, PSU, Bank, Railway jobs with eligibility criteria, deadlines and how to apply details.">
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="1 day">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mysarkariresult.in/Jobs/jobs.html">
     <meta property="og:title" content="Latest Govt Jobs 2025 | MySarkariResult | Naukri">
-    <meta property="og:description" 
-          content="Daily updated list of active government jobs with direct application links. Find Central/State Govt, PSU, Bank, Railway vacancies.">
+    <meta property="og:description"
+        content="Daily updated list of active government jobs with direct application links. Find Central/State Govt, PSU, Bank, Railway vacancies.">
     <meta property="og:image" content="https://mysarkariresult.in/assets/images/logo.png">
     <meta property="og:site_name" content="MySarkariResult">
 
@@ -23,15 +23,16 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mysarkariresult.in/Jobs/jobs.html">
     <meta property="twitter:title" content="Latest Govt Jobs 2025 | MySarkariResult | Naukri">
-    <meta property="twitter:description" 
-          content="Daily updated list of active government jobs with direct application links and eligibility details.">
+    <meta property="twitter:description"
+        content="Daily updated list of active government jobs with direct application links and eligibility details.">
     <meta property="twitter:image" content="https://mysarkariresult.in/assets/images/logo.png">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://mysarkariresult.in/Jobs/jobs.html">
 
     <!-- Google News/Article Tags -->
-    <meta name="news_keywords" content="sarkari results, my sarkari results, sarkari naukri, latest government job 2025, mysarkariresult, government jobs, sarkari naukri, latest govt jobs, PSU jobs, bank jobs">
+    <meta name="news_keywords"
+        content="sarkari results, my sarkari results, sarkari naukri, latest government job 2025, mysarkariresult, government jobs, sarkari naukri, latest govt jobs, PSU jobs, bank jobs">
     <meta name="standout" content="https://mysarkariresult.in/Jobs/jobs.html">
 
     <!-- Styles -->
@@ -170,7 +171,7 @@
             background: var(--primary);
         }
 
-        .info-content ul, 
+        .info-content ul,
         .info-content ol {
             padding-left: 1.5rem;
             margin: 1rem 0;
@@ -374,18 +375,35 @@
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const html = await response.text();
                 document.getElementById(`${componentName}-container`).innerHTML = html;
-                
+
                 // Initialize mobile menu if header is loaded
                 if (componentName === 'header') {
-                    const menuToggle = document.querySelector('.menu-toggle');
-                    const nav = document.querySelector('nav');
+                    const menuToggle = document.querySelector('.msr-mobile-toggle');
+                    const nav = document.querySelector('.msr-main-nav');
                     if (menuToggle && nav) {
                         menuToggle.addEventListener('click', () => {
+                            menuToggle.classList.toggle('active');
                             nav.classList.toggle('active');
-                            const icon = menuToggle.querySelector('i');
-                            icon.classList.toggle('fa-bars');
-                            icon.classList.toggle('fa-times');
+
+                            // Toggle body overflow when menu is open
+                            if (nav.classList.contains('active')) {
+                                document.body.style.overflow = 'hidden';
+                            } else {
+                                document.body.style.overflow = '';
+                            }
                         });
+
+                        // Close menu when clicking on links (mobile only)
+                        if (window.innerWidth <= 768) {
+                            const navLinks = document.querySelectorAll('.msr-main-nav a');
+                            navLinks.forEach(link => {
+                                link.addEventListener('click', () => {
+                                    menuToggle.classList.remove('active');
+                                    nav.classList.remove('active');
+                                    document.body.style.overflow = '';
+                                });
+                            });
+                        }
                     }
                 }
             } catch (error) {
@@ -402,12 +420,12 @@
         const loadJobs = async () => {
             const container = document.getElementById('jobs-container');
             const loading = document.getElementById('loading');
-            
+
             try {
                 // Try to get from cache first
                 const cachedJobs = sessionStorage.getItem('jobsData');
                 let jobs = [];
-                
+
                 if (cachedJobs) {
                     jobs = JSON.parse(cachedJobs);
                 } else {
@@ -419,7 +437,7 @@
                 }
 
                 loading.style.display = 'none';
-                
+
                 if (jobs.length === 0) {
                     container.innerHTML = `<li class="content-item">No active vacancies currently. Check back later.</li>`;
                     return;
@@ -432,7 +450,7 @@
                         </a>
                     </li>
                 `).join('');
-                
+
                 // Update Google News Schema
                 updateNewsSchema(jobs);
 
@@ -475,11 +493,11 @@
                     "@id": "https://mysarkariresult.in/Jobs/jobs.html"
                 }
             };
-            
+
             // Remove old schema if exists
             const oldSchema = document.querySelector('script[type="application/ld+json"][data-news-schema]');
             if (oldSchema) oldSchema.remove();
-            
+
             // Add new schema
             const script = document.createElement('script');
             script.type = "application/ld+json";
@@ -498,7 +516,7 @@
             ]).catch(error => {
                 console.error('Initialization error:', error);
             });
-            
+
             // Back to Top Button (if in footer)
             window.addEventListener('scroll', () => {
                 const backToTop = document.getElementById('backToTop');
@@ -509,4 +527,5 @@
         });
     </script>
 </body>
+
 </html>
