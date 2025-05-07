@@ -105,4 +105,36 @@
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url> -->
+
+    <!-- jobs -->
+
+    <!-- CISCE ICSE/ISC Result 2025 -->
+    <url>
+        <loc>https://www.mysarkariresult.in/Results/cisce-icse-isc-result-2025.html</loc>
+        <lastmod>2025-05-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- CBSE Result 2025 -->
+    <url>
+        <loc>https://www.mysarkariresult.in/Results/cbse-result-2025.html</loc>
+        <lastmod>2025-05-06</lastmod> 
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- CISCE ICSE/ISC Result 2025 -->
+    <url>
+        <loc>https://www.mysarkariresult.in/Results/cisce-icse-isc-result-2025.html</loc>
+        <lastmod>2025-05-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- CBSE Result 2025 -->
+    <url>
+        <loc>https://www.mysarkariresult.in/Results/cbse-result-2025.html</loc>
+        <lastmod>2025-05-06</lastmod> 
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
